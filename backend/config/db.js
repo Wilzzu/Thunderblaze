@@ -6,7 +6,6 @@ require("dotenv").config();
 const connectDB = async () => {
 	try {
 		const uri = `mongodb+srv://${process.env.MONGOUSER}:${process.env.MONGOPASS}@cluster0.yzaem6e.mongodb.net/?retryWrites=true&w=majority`;
-		console.log(uri);
 		const conn = await mongoose.connect(uri);
 
 		console.log(`MongoDB connected: ${conn.connection.host}`.green);

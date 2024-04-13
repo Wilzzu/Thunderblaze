@@ -27,13 +27,10 @@ const SocialCard = (props) => {
 						{(close) => (
 							<div className="relative flex items-center justify-center">
 								<div onClick={close} className="absolute h-[100vh] w-[100vw] bg-[#00000071]"></div>
-								<div className="absolute flex h-[30vh] w-[32vw] flex-col items-center justify-center gap-8 rounded-bigger bg-gradient-to-b from-[#161616] to-[#1f1f1f]">
+								<div className="absolute p-8 px-20 text-nowrap flex flex-col items-center justify-center gap-8 rounded-bigger bg-gradient-to-b from-[#161616] to-[#1f1f1f]">
 									<h1 className="font-hanken text-lg text-white">
 										Are you sure you want to remove linked{" "}
-										{props.social === "league"
-											? "League of Legends"
-											: props.social.charAt(0).toUpperCase() + props.social.slice(1)}{" "}
-										account?
+										{props.social.charAt(0).toUpperCase() + props.social.slice(1)} account?
 									</h1>
 									<div className="flex items-center justify-center gap-4">
 										<button
@@ -60,8 +57,7 @@ const SocialCard = (props) => {
 					</div>
 					<button
 						onClick={handleLinkUser}
-						className="h-10 w-24 rounded-xl border-2 border-[#53FF4D] font-poppins text-sm font-semibold text-[#53FF4D] opacity-90 shadow-[#00000075] duration-150 text-shadow disabled:opacity-20 hover:bg-[#53ff4d50] hover:text-whiteish hover:opacity-100 disabled:hover:bg-transparent disabled:hover:text-[#53FF4D] disabled:hover:opacity-20"
-						disabled={props.social === "league" && true}>
+						className="h-10 w-24 rounded-xl border-2 border-[#53FF4D] font-poppins text-sm font-semibold text-[#53FF4D] opacity-90 shadow-[#00000075] duration-150 text-shadow disabled:opacity-20 hover:bg-[#53ff4d50] hover:text-whiteish hover:opacity-100 disabled:hover:bg-transparent disabled:hover:text-[#53FF4D] disabled:hover:opacity-20">
 						Connect
 					</button>
 				</div>

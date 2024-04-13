@@ -13,6 +13,13 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(
+	session({
+		resave: true,
+		secret: process.env.SESSION_SECRET,
+		saveUninitialized: true,
+	})
+);
 
 // Add api endpoints
 app.use("/api/feedback", require("./routes/feedbackRoutes"));
@@ -21,12 +28,5 @@ app.use("/api/discord", require("./routes/discordRoutes"));
 app.use("/api/steam", require("./routes/steamRoutes"));
 app.use("/api/lichess", require("./routes/lichessRoutes"));
 app.use("/api/videos", require("./routes/videosRoutes"));
-app.use(
-	session({
-		resave: true,
-		secret: "bae0f1cea21504986c0522248c1790f55a8d6c60b54a846d7cca0c945bcb97b2",
-		saveUninitialized: true,
-	})
-);
 
 app.listen(port, () => console.log(`Server started on port ${port}`.yellow));

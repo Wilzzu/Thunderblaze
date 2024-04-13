@@ -22,6 +22,7 @@ const createChallenge = (verifier) => base64URLEncode(sha256(verifier));
 const getLogin = asyncHandler(async (req, res) => {
 	const verifier = createVerifier();
 	const challenge = createChallenge(verifier);
+
 	req.session.codeVerifier = verifier;
 	res.redirect(
 		"https://lichess.org/oauth?" +
