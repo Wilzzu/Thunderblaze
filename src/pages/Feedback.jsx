@@ -232,9 +232,7 @@ const Feedback = () => {
 				<div className="mt-52 flex flex-col items-center justify-center gap-4">
 					<div>
 						<h1 className="font-poppins text-xl text-red-600">Et ole kirjautunut sisään!</h1>
-						<h1 className="font-hanken text-base text-whiteish">
-							Kirjaudu sisään nähdäksesi sivu:
-						</h1>
+						<h1 className="font-hanken text-base text-whiteish">Login to see the page:</h1>
 					</div>
 					<LoginButton
 						default={

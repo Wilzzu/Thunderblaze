@@ -15,21 +15,21 @@ const navItems = [
 		icon: <HomeIcon fill={"transparent"} stroke={"#000"} strokeWidth={40} height={28} width={28} />,
 	},
 	{
-		name: "Videot",
+		name: "Videos",
 		path: "/videos",
 		width: "w-[48px]",
 		icon: <HomeIcon fill={"transparent"} stroke={"#000"} strokeWidth={40} height={28} width={28} />,
 	},
 	{
-		name: "Tilastot",
+		name: "Statistics",
 		path: "/stats",
-		width: "w-[54px]",
+		width: "w-[65px]",
 		icon: <HomeIcon fill={"transparent"} stroke={"#000"} strokeWidth={40} height={28} width={28} />,
 	},
 	{
-		name: "Palaute",
+		name: "Feedback",
 		path: "/feedback",
-		width: "w-[54px]",
+		width: "w-[70px]",
 		icon: <HomeIcon fill={"transparent"} stroke={"#000"} strokeWidth={40} height={28} width={28} />,
 	},
 ];

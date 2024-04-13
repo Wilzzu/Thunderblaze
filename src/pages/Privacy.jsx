@@ -4,7 +4,7 @@ const Privacy = () => {
 			<h1>Privacy Policy of Thunderblaze</h1>
 
 			<p className="mb-3">
-				Wilzzu operates the demo.wilzzu.dev/thunderblaze website, which provides the service.
+				Wilzzu operates the thunderblaze.wilzzu.dev website, which provides the service.
 			</p>
 
 			<p className="mb-3">
@@ -22,8 +22,8 @@ const Privacy = () => {
 
 			<p>
 				The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions,
-				which is accessible at demo.wilzzu.dev/thunderblaze, unless otherwise defined in this
-				Privacy Policy.
+				which is accessible at thunderblaze.wilzzu.dev, unless otherwise defined in this Privacy
+				Policy.
 			</p>
 
 			<h2>Information Collection and Use</h2>

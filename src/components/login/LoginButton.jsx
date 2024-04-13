@@ -34,7 +34,7 @@ const LoginButton = (props) => {
 				className={
 					"lg:block font-hanken font-medium " + props.textShadow + (!props.textEnable && " hidden")
 				}>
-				Kirjaudu
+				Login
 			</h1>
 		</button>
 	);

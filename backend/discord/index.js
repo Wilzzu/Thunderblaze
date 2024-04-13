@@ -50,24 +50,22 @@ client.on("messageCreate", async (message) => {
 	// Check for commands
 	if (websiteCmd.includes(message.content.toLowerCase()))
 		message.reply({
-			components: [addBtn("Thunderblaze website", "https://demo.wilzzu.dev/thunderblaze/", "🌐")],
+			components: [addBtn("Thunderblaze website", "https://thunderblaze.wilzzu.dev/", "🌐")],
 		});
 
 	if (statsCmd.includes(message.content.toLowerCase()))
 		message.reply({
-			components: [addBtn("Statistics", "https://demo.wilzzu.dev/thunderblaze/stats", "📈")],
+			components: [addBtn("Statistics", "https://thunderblaze.wilzzu.dev/stats", "📈")],
 		});
 
 	if (feedbackCmd.includes(message.content.toLowerCase()))
 		message.reply({
-			components: [addBtn("Send feedback", "https://demo.wilzzu.dev/thunderblaze/feedback", "📨")],
+			components: [addBtn("Send feedback", "https://thunderblaze.wilzzu.dev/feedback", "📨")],
 		});
 
 	if (videosCmd.includes(message.content.toLowerCase()))
 		message.reply({
-			components: [
-				addBtn("Thunderblaze videos", "https://demo.wilzzu.dev/thunderblaze/videos", "📺"),
-			],
+			components: [addBtn("Thunderblaze videos", "https://thunderblaze.wilzzu.dev/videos", "📺")],
 		});
 
 	// Timeout DB

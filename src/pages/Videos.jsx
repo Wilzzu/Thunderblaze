@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import useGetLoggedInUser from "../hooks/login/useGetLoggedInUser";
 import useGetPrivateVideos from "../hooks/videos/useGetPrivateVideos";
@@ -14,6 +14,7 @@ const supabase = createClient(import.meta.env.VITE_SUPAURL, import.meta.env.VITE
 const Videos = () => {
 	// Setting user's session token used for fetching private videos
 	const [token, setToken] = useState(null);
+	const mainRef = useRef(null);
 
 	// Fetching videos
 	const { publicData, publicLoading, publicIsError } = useGetPublicVideos();
@@ -57,8 +58,15 @@ const Videos = () => {
 	const [showPriv, setShowPriv] = useState(true);
 	const [showPub, setShowPub] = useState(true);
 
+	// Scroll to top when video is selected
+	useEffect(() => {
+		const scrollEl = document.getElementsByClassName("simplebar-content-wrapper")[0];
+		if (!scrollEl || !selectedVideo) return;
+		scrollEl.scrollTo({ top: 0, behavior: "smooth" });
+	}, [selectedVideo]);
+
 	return (
-		<div className="min-h-screen bg-[#0F0F0F] text-whiteish">
+		<div ref={mainRef} className="min-h-screen bg-[#0F0F0F] text-whiteish">
 			<div className="centerDiv max-w-[1280px] px-8 pt-10 pb-40">
 				{/* Player */}
 				{selectedVideo && <YTEmbed video={selectedVideo} />}

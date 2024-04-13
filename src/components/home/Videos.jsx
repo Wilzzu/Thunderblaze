@@ -26,7 +26,7 @@ const Videos = () => {
 							<Link
 								to={"/videos"}
 								className="w-64 rounded-3xl bg-lime py-4 text-2xl font-bold text-white duration-300 hover:w-[16.5rem] hover:py-[1.15rem] hover:text-[1.65rem] hover:shadow-2xl hover:shadow-lime hover:duration-200">
-								Videot
+								Videos
 							</Link>
 						</div>
 					</div>
