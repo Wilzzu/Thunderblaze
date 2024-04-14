@@ -1,9 +1,9 @@
-import { createClient } from "@supabase/supabase-js";
 import DiscordIcon from "../../assets/social/DiscordIcon.jsx";
 import { useLocation } from "react-router-dom";
+import { useSupabase } from "../../hooks/login/useSupabase.js";
 
-const supabase = createClient(import.meta.env.VITE_SUPAURL, import.meta.env.VITE_SUPAAPI);
 const LoginButton = (props) => {
+	const { supabase } = useSupabase();
 	const location = useLocation();
 
 	// Save current path to cookie and use it later to redirect back to same LoginPage

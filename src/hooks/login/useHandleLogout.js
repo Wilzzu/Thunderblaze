@@ -1,11 +1,10 @@
 import { useDispatch } from "react-redux";
 import { removeUserInfo } from "../../store";
-import { createClient } from "@supabase/supabase-js";
 import { useNavigate } from "react-router-dom";
-
-const supabase = createClient(import.meta.env.VITE_SUPAURL, import.meta.env.VITE_SUPAAPI);
+import { useSupabase } from "./useSupabase";
 
 const useHandleLogout = () => {
+	const { supabase } = useSupabase();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 

@@ -3,15 +3,16 @@ import { useSelector } from "react-redux";
 import useGetLoggedInUser from "../hooks/login/useGetLoggedInUser";
 import useGetPrivateVideos from "../hooks/videos/useGetPrivateVideos";
 import useGetPublicVideos from "../hooks/videos/useGetPublicVideos";
-import { createClient } from "@supabase/supabase-js";
 import PrivateVideos from "../components/videos/PrivateVideos";
 import PublicVideos from "../components/videos/PublicVideos";
 import YTEmbed from "../components/videos/YTEmbed";
 import DropdownCategory from "../components/videos/DropdownCategory";
 import SortButton from "../components/videos/SortButton";
-const supabase = createClient(import.meta.env.VITE_SUPAURL, import.meta.env.VITE_SUPAAPI);
+import { useSupabase } from "../hooks/login/useSupabase";
 
 const Videos = () => {
+	const { supabase } = useSupabase();
+
 	// Setting user's session token used for fetching private videos
 	const [token, setToken] = useState(null);
 	const mainRef = useRef(null);

@@ -1,14 +1,13 @@
-import { createClient } from "@supabase/supabase-js";
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import settings from "../../settings.json";
 import { addUserInfo } from "../../store";
-
-const supabase = createClient(import.meta.env.VITE_SUPAURL, import.meta.env.VITE_SUPAAPI);
+import { useSupabase } from "./useSupabase";
 
 const useAddNewUser = () => {
+	const { supabase } = useSupabase();
 	const [isLoading, setIsLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
 	const [errorText, setErrorText] = useState("#bugi");

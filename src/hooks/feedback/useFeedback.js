@@ -1,12 +1,11 @@
 import { useState } from "react";
-
-import { createClient } from "@supabase/supabase-js";
 import settings from "../../settings.json";
 import axios from "axios";
-
-const supabase = createClient(import.meta.env.VITE_SUPAURL, import.meta.env.VITE_SUPAAPI);
+import { useSupabase } from "../login/useSupabase";
 
 const useFeedback = () => {
+	const { supabase } = useSupabase();
+
 	const [feedbackSent, setFeedbackSent] = useState(false);
 	const [feedbackID, setFeedbackID] = useState(null);
 	const [allFeedbacks, setAllFeedbacks] = useState(null);

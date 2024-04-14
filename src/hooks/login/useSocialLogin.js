@@ -1,10 +1,10 @@
 import axios from "axios";
 import settings from "../../settings.json";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(import.meta.env.VITE_SUPAURL, import.meta.env.VITE_SUPAAPI);
+import { useSupabase } from "./useSupabase";
 
 const useSocialLogin = (user, social) => {
+	const { supabase } = useSupabase();
+
 	// Handle login
 	// The API address for logging in should look like this for all: /api/SOCIAL/:id
 	// The API response should be a redirect to the login website

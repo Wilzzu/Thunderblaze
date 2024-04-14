@@ -1,8 +1,9 @@
-import { createClient } from "@supabase/supabase-js";
-const supabase = createClient(import.meta.env.VITE_SUPAURL, import.meta.env.VITE_SUPAAPI);
+import { useSupabase } from "./useSupabase";
 
 // When manually wanting to get the user do this
 const useGetLoggedInUser = () => {
+	const { supabase } = useSupabase();
+
 	const getUser = (loggedUser, force = false) => {
 		if (force || loggedUser == null || (loggedUser && !Object.keys(loggedUser).length)) {
 			return supabase.auth.getUser().then((value) => {
