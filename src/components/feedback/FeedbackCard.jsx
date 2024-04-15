@@ -46,7 +46,7 @@ const FeedbackCard = (props) => {
 			<div className="flex h-full w-full flex-col items-start justify-center overflow-hidden text-left font-hanken">
 				<div className="flex items-center gap-1">
 					<h1 className="font-semibold tracking-wider">
-						{props.feedback.anon ? "Nimetön" : user?.nickname}
+						{props.feedback.anon ? "Anonymous" : user?.nickname}
 					</h1>
 					<p
 						className={

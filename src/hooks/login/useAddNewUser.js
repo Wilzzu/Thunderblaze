@@ -10,7 +10,7 @@ const useAddNewUser = () => {
 	const { supabase } = useSupabase();
 	const [isLoading, setIsLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
-	const [errorText, setErrorText] = useState("#bugi");
+	const [errorText, setErrorText] = useState("#DCW3049");
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ const useAddNewUser = () => {
 			if (value.data?.user?.user_metadata) {
 				isUserAlreadyInDB(value.data?.user?.user_metadata);
 			} else {
-				throwError("#supermarsu4332");
+				throwError("#DCW4332");
 			}
 		});
 	};
@@ -37,7 +37,7 @@ const useAddNewUser = () => {
 	const isUserAlreadyInDB = async (user) => {
 		const { data, error } = await supabase.from("users").select().eq("id", user.provider_id);
 		if (error) {
-			throwError("#supermarsu1122", error);
+			throwError("#DCW1122", error);
 		}
 		if (data.length) {
 			console.log("User already in DB");
@@ -54,7 +54,7 @@ const useAddNewUser = () => {
 			.get(`${settings.apiLocation}/discord/members/refresh`)
 			.then((res) => addNewUserToDB(user, res.data))
 			.catch((err) => {
-				throwError("#porava22", err);
+				throwError("#DCW22", err);
 			});
 	};
 
@@ -74,18 +74,18 @@ const useAddNewUser = () => {
 			},
 		});
 		if (error) {
-			throwError("#supermarsu3922", error);
+			throwError("#DCW3922", error);
 		} else {
 			const { data, err } = await supabase.from("users").select().eq("id", user.provider_id);
 			if (err) {
-				throwError("#supermarsu1122", err);
+				throwError("#DCW1122", err);
 			}
 			if (data.length) {
 				dispatch(addUserInfo(data[0]));
 				navigate(getCookie());
 				setIsLoading(false);
 			} else {
-				throwError("#supermarsu1337", err);
+				throwError("#DCW1337", err);
 			}
 		}
 	};

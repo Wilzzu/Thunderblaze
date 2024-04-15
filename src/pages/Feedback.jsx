@@ -7,6 +7,7 @@ import SuccessCheckmark from "../assets/SuccessCheckmark";
 import useFeedback from "../hooks/feedback/useFeedback";
 import FeedbackButton from "../components/feedback/FeedbackButton";
 import FeedbackCard from "../components/feedback/FeedbackCard";
+import { Link } from "react-router-dom";
 
 const Feedback = () => {
 	// Variables for user
@@ -75,7 +76,7 @@ const Feedback = () => {
 		setTimeout(() => setShowLoadingText(true), 1000);
 		return (
 			<div className="min-h-screen bg-blackishDark pt-52 font-poppins text-whiteish">
-				{showLoadingText && <h1 className="animate-pulseLight">Ladataan sivua...</h1>}
+				{showLoadingText && <h1 className="animate-pulseLight">Loading...</h1>}
 			</div>
 		);
 	}
@@ -99,8 +100,9 @@ const Feedback = () => {
 									animate={{ y: 0, opacity: 1 }}
 									initial={{ y: -20, opacity: 0 }}
 									transition={{ delay: 1, duration: 0.8, type: "tween" }}>
-									<h1 className="text-xl">Palaute lähetetty onnistuneesti!</h1>
+									<h1 className="text-xl">Feedback sent successfully!</h1>
 									<h1 className="font-hanken text-sm">{feedbackID}</h1>
+									<p className="text-sm font-light mt-2">You can now leave this page.</p>
 								</motion.div>
 							</motion.div>
 						)}
@@ -122,7 +124,7 @@ const Feedback = () => {
 										initial={{ y: 20, opacity: 0 }}
 										transition={{ delay: 1.2, duration: 1, type: "tween" }}
 										className="mb-4 font-poppins text-xl">
-										<h1>Lähetä palautetta moderaattoritiimille:</h1>
+										<h1>Send feedback to the moderation team:</h1>
 									</motion.div>
 									{/* User information*/}
 									<motion.div
@@ -140,15 +142,15 @@ const Feedback = () => {
 										<div className="h-full">
 											<div className="flex items-end gap-2 text-whiteish">
 												<h1 className="text-left text-xl font-medium">
-													{isAnon ? "Nimetön" : user.discord.name.split("#")[0]}
+													{isAnon ? "Anonymous" : user.discord.name.split("#")[0]}
 												</h1>
-												<p className="text-base font-thin opacity-70">tänään klo {currTime}</p>
+												<p className="text-base font-thin opacity-70">Today at {currTime}</p>
 											</div>
 											{/* Text field */}
 											<textarea
 												ref={inputRef}
 												onChange={(e) => handleTextareaChange(e)}
-												placeholder="Kirjoita palautteesi..."
+												placeholder="Your feedback..."
 												className={`h-[100px] w-[500px] resize-none bg-blackishLight pr-6 text-lg outline-none placeholder:text-whiteish placeholder:opacity-50 ${
 													charCount > 1000 ? "text-red-500" : "text-whiteish"
 												}`}
@@ -167,7 +169,7 @@ const Feedback = () => {
 													"rounded-lg py-2 px-3 font-hanken duration-100 hover:cursor-pointer border-blackishLight hover:border-[#414141] border-[3px] hover:bg-[#414141] " +
 													(isAnon && "bg-blackishLight")
 												}>
-												<h1>{isAnon ? "✅" : "❌"} Lähetä nimettömänä</h1>
+												<h1>{isAnon ? "✅" : "❌"} Send as anonymous</h1>
 											</button>
 										</motion.div>
 										{/* Character count */}
@@ -202,7 +204,10 @@ const Feedback = () => {
 								animate={{ opacity: 1 }}
 								initial={{ opacity: 0 }}
 								className="flex h-full w-full flex-col items-center justify-start">
-								<div className="mb-5 font-poppins text-2xl">Palautteet</div>
+								<div className="mb-5 font-poppins text-2xl">
+									<h1>Feedbacks</h1>
+									<p className="text-sm font-light">Only visible to moderators</p>
+								</div>
 								<div className="scrollNormal scrollRight scrollPadding flex max-h-[640px] w-1/2 flex-col items-start justify-start gap-2 overflow-auto rounded-3xl bg-blackishLight p-10 scrollbar scrollbar-thumb-lime scrollbar-thumb-rounded-full scrollbar-w-7">
 									{allFeedbacks
 										?.slice(0)
@@ -225,13 +230,20 @@ const Feedback = () => {
 					</div>
 				) : (
 					// If not part of the group
-					<div>et oo ryhmän jäsen</div>
+					<div className="mt-40 font-poppins flex flex-col gap-4 items-center">
+						<h1>This page is only for group members, sorry!</h1>
+						<Link
+							to="/"
+							className="duration-150 rounded-full w-fit p-2 px-4 border-2 hover:scale-105">
+							Back to home
+						</Link>
+					</div>
 				)
 			) : (
 				// If not logged in
 				<div className="mt-52 flex flex-col items-center justify-center gap-4">
 					<div>
-						<h1 className="font-poppins text-xl text-red-600">Et ole kirjautunut sisään!</h1>
+						<h1 className="font-poppins text-xl text-red-600">Not logged in!</h1>
 						<h1 className="font-hanken text-base text-whiteish">Login to see the page:</h1>
 					</div>
 					<LoginButton

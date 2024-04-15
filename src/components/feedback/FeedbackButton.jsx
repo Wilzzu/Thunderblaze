@@ -22,14 +22,14 @@ const FeedbackButton = (props) => {
 		// Check if feedback is correct
 		if (Date.now() - parseInt(props.user.website.lastFeedback) < timeLimit)
 			setButtonText(
-				`Voit lähettää palautetta uudestaan ${convertMS(
+				`You can send feedback again in ${convertMS(
 					timeLimit - (Date.now() - parseInt(props.user.website.lastFeedback))
-				)} kuluttua.`
+				)}`
 			);
 		else if (props.charCount > 1000) {
 			console.log(props.charCount);
-			setButtonText("Palautetta ei voitu lähettää koska siinä on yli 1000 kirjainta.");
-		} else if (props.charCount < 15) setButtonText("Palautteesi on liian lyhyt.");
+			setButtonText("Feedback couldn't be sent because it has over 1000 characters.");
+		} else if (props.charCount < 15) setButtonText("Feedback is too short.");
 		// Send feedback if everything is correct
 		else {
 			setButtonText("");
@@ -85,7 +85,7 @@ const FeedbackButton = (props) => {
 								? "border-red-500 bg-red-500 hover:bg-red-500"
 								: "border-limeDark bg-limeDark hover:bg-opacity-100"
 						}`}>
-						Lähetä palaute
+						Send feedback
 					</button>
 				)}
 			</motion.div>
