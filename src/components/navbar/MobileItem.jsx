@@ -11,9 +11,9 @@ const MobileItem = (props) => {
 		<Link to={props.item.path} onClick={props.setToggled}>
 			<motion.div
 				variants={item}
-				className="flex items-center px-6 justify-between py-4 hover:font-semibold">
-				<h1 className="text-lg font-poppins">{props.item.name}</h1>
+				className="flex items-center w-full px-6 gap-4 py-4 hover:font-semibold">
 				<div className="h-[28px] mb-1">{props.item.icon}</div>
+				<h1 className="text-lg font-poppins text-left">{props.item.name}</h1>
 			</motion.div>
 		</Link>
 	);

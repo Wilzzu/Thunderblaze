@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import Popup from "reactjs-popup";
 import homeIcon from "../../assets/homeIcon.svg";
+import { PiTelevisionBold } from "react-icons/pi";
+import { IoIosStats } from "react-icons/io";
+import { BiEnvelope } from "react-icons/bi";
+import { MdLogout } from "react-icons/md";
 
 const Navigation = (props) => {
 	return (
@@ -13,27 +17,27 @@ const Navigation = (props) => {
 			</Link>
 			<Link to="/videos" className="w-full px-4">
 				<div className="flex items-center justify-start gap-4 rounded-3xl py-6 pl-12 duration-150 hover:bg-blackishDarkest">
-					<img src={homeIcon} alt="" className="w-7" />
+					<PiTelevisionBold fill="white" className="w-auto h-7" />
 					<h1 className="text-left font-poppins text-2xl font-semibold text-white">Videos</h1>
 				</div>
 			</Link>
 			<Link to="/stats" className="w-full px-4">
 				<div className="flex items-center justify-start gap-4 rounded-3xl py-6 pl-12 duration-150 hover:bg-blackishDarkest">
-					<img src={homeIcon} alt="" className="w-7" />
+					<IoIosStats fill="white" className="w-auto h-7" />
 					<h1 className="text-left font-poppins text-2xl font-semibold text-white">Stats</h1>
 				</div>
 			</Link>
 			<Link to="/feedback" className="w-full px-4">
 				<div className="flex items-center justify-start gap-4 rounded-3xl py-6 pl-12 duration-150 hover:bg-blackishDarkest">
-					<img src={homeIcon} alt="" className="w-7" />
+					<BiEnvelope fill="white" className="w-auto h-7" />
 					<h1 className="text-left font-poppins text-2xl font-semibold text-white">Feedback</h1>
 				</div>
 			</Link>
 			<Popup
 				trigger={
 					<button className="w-full px-4">
-						<div className="group flex items-center justify-start gap-4 rounded-3xl py-6 pl-12 opacity-80 duration-150 hover:bg-red-500 hover:opacity-90">
-							<img src={homeIcon} alt="" className="w-7" />
+						<div className="group flex items-center justify-start gap-4 rounded-3xl py-6 pl-12  duration-150 hover:bg-red-500 opacity-90">
+							<MdLogout fill="white" className="w-auto h-7" />
 							<h1 className="text-left font-poppins text-2xl font-semibold text-red-500 duration-150 group-hover:text-white">
 								Logout
 							</h1>

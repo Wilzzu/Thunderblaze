@@ -1,15 +1,36 @@
+import { useInView } from "framer-motion";
 import heroImg from "../../assets/homeModeratorsHero.png";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const Feedback = () => {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
+
 	return (
 		<div className="centerDiv max-w-[1280px]">
 			<div className="flex h-[850px] items-center justify-center gap-32">
 				{/* LEFT */}
-				<img src={heroImg} alt="Moderator Image" className="w-[38%] drop-shadow-2xl" />
+				<img
+					ref={ref}
+					style={{
+						transform: isInView ? "none" : "translateX(-40px)",
+						opacity: isInView ? 1 : 0,
+						transition: "all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+					}}
+					src={heroImg}
+					alt="Moderator Image"
+					className="w-[38%] drop-shadow-2xl"
+				/>
 
 				{/* RIGHT */}
-				<div className="flex w-[30%] flex-col gap-2">
+				<div
+					style={{
+						transform: isInView ? "none" : "translateX(40px)",
+						opacity: isInView ? 1 : 0,
+						transition: "all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+					}}
+					className="flex w-[30%] flex-col gap-2">
 					<h1 className="text-right font-poppins text-5xl font-bold leading-[3.5rem]">
 						We Value Your <span className="text-lime">Feedback</span>
 					</h1>

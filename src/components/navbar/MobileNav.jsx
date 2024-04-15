@@ -69,7 +69,7 @@ const MobileNav = (props) => {
 							initial="closed"
 							animate="open"
 							exit={{ x: 450, transition: { type: "tween", duration: 0.3, ease: "easeOut" } }}
-							className="absolute right-0 top-0 h-dvh w-3/5 bg-whiteish opacity-[97%] z-20 rounded-l-2xl">
+							className="absolute right-0 top-0 h-dvh w-3/5 bg-whiteish z-20 rounded-l-2xl drop-shadow-2xl">
 							{/* Close button */}
 							<div className="h-20 px-5 items-center flex">
 								<img src={logo} className="w-10 opacity-50" alt="" />
@@ -114,7 +114,7 @@ const MobileNav = (props) => {
 							initial={{ opacity: 0 }}
 							exit={{ opacity: 0 }}
 							onClick={() => setToggled(false)}
-							className="bg-black bg-opacity-50 w-full h-full absolute z-10"></motion.div>
+							className="bg-black bg-opacity-50 w-full h-full fixed z-10"></motion.div>
 					</RemoveScroll>
 				)}
 			</AnimatePresence>
@@ -125,10 +125,10 @@ const MobileNav = (props) => {
 						<img
 							src={logo}
 							alt=""
-							className="max-h-full opacity-90 duration-150 hover:scale-[1.04] hover:opacity-100"
+							className="h-10 opacity-90 duration-150 hover:scale-[1.04] hover:opacity-100"
 						/>
 						<div className="border-r-2 h-2/3 border-black opacity-50" />
-						<h1 className="text-xl font-poppins font-bold text-blackishDarkest tracking-wider">
+						<h1 className="text-lg font-poppins font-bold text-blackishDarkest tracking-wider">
 							THUNDERBLAZE
 						</h1>
 					</div>

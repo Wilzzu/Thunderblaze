@@ -2,16 +2,36 @@ import HomeWheelTemp from "../../assets/HomeWheelTemp.jsx";
 import HomeStatsTemp from "../../assets/HomeStatsTemp.jsx";
 
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const OtherApps = () => {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: false });
+
 	return (
 		<div className="relative">
 			{/* Spacer */}
 			<div className="waveSpacer waveAspect2 wave2 mt-12" />
 			{/* Main block */}
 			<div className="flex h-[1050px] flex-col items-center justify-center gap-24 bg-blackish px-[100px] pb-28 text-white text-balance">
-				<h1 className="font-poppins text-6xl font-black text-lime">OTHER FEATURES</h1>
-				<div className="mb-12 flex items-center justify-center gap-28">
+				<h1
+					ref={ref}
+					style={{
+						transform: isInView ? "none" : "translateY(-10px)",
+						opacity: isInView ? 1 : 0,
+						transition: "all .4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
+					}}
+					className="font-poppins text-6xl font-black text-lime">
+					OTHER FEATURES
+				</h1>
+				<div
+					style={{
+						transform: isInView ? "none" : "translateY(40px)",
+						opacity: isInView ? 1 : 0,
+						transition: "all .8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
+					}}
+					className="mb-12 flex items-center justify-center gap-28">
 					{/* LEFT */}
 					<a
 						href="https://dcwheel.wilzzu.dev"

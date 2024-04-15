@@ -13,7 +13,7 @@ const Stats = () => {
 					style={{
 						transform: isInView ? "none" : "translateY(40px)",
 						opacity: isInView ? 1 : 0,
-						transition: "all 1.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+						transition: "all 1.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
 					}}
 					className="flex flex-col items-center justify-center gap-7">
 					<span ref={ref} className="drop-shadow-lg text-center">
@@ -28,7 +28,7 @@ const Stats = () => {
 					style={{
 						transform: isInView ? "none" : "translateY(40px)",
 						opacity: isInView ? 1 : 0,
-						transition: "all 1.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.75s",
+						transition: "all 1.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
 					}}
 					className="flex flex-col items-center justify-center gap-7">
 					<span className="drop-shadow-lg text-center">
@@ -44,7 +44,7 @@ const Stats = () => {
 						mixBlendMode: "lighten",
 						transform: isInView ? "none" : "translateY(40px)",
 						opacity: isInView ? 1 : 0,
-						transition: "all 1.1s cubic-bezier(0.17, 0.55, 0.55, 1) 1.05s",
+						transition: "all 1.1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.75s",
 					}}
 					className="flex flex-col items-center justify-center gap-7">
 					<span className="drop-shadow-lg text-center">

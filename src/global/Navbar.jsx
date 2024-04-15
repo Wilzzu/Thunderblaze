@@ -6,10 +6,13 @@ import { addUserInfo } from "../store";
 import LargeNav from "../components/navbar/LargeNav";
 import MobileNav from "../components/navbar/MobileNav";
 import HomeIcon from "../assets/HomeIcon";
+import { PiTelevisionBold } from "react-icons/pi";
+import { IoIosStats } from "react-icons/io";
+import { BiEnvelope } from "react-icons/bi";
 
 const navItems = [
 	{
-		name: "Etusivu",
+		name: "Home",
 		path: "/",
 		width: "w-[50px]",
 		icon: <HomeIcon fill={"transparent"} stroke={"#000"} strokeWidth={40} height={28} width={28} />,
@@ -18,19 +21,19 @@ const navItems = [
 		name: "Videos",
 		path: "/videos",
 		width: "w-[48px]",
-		icon: <HomeIcon fill={"transparent"} stroke={"#000"} strokeWidth={40} height={28} width={28} />,
+		icon: <PiTelevisionBold fill="black" className="w-full h-full" />,
 	},
 	{
 		name: "Statistics",
 		path: "/stats",
 		width: "w-[65px]",
-		icon: <HomeIcon fill={"transparent"} stroke={"#000"} strokeWidth={40} height={28} width={28} />,
+		icon: <IoIosStats fill="black" className="w-full h-full" />,
 	},
 	{
 		name: "Feedback",
 		path: "/feedback",
 		width: "w-[70px]",
-		icon: <HomeIcon fill={"transparent"} stroke={"#000"} strokeWidth={40} height={28} width={28} />,
+		icon: <BiEnvelope fill="black" className="w-full h-full" />,
 	},
 ];
 
