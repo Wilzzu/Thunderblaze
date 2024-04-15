@@ -27,7 +27,7 @@ const LoginButton = (props) => {
 				props.hover +
 				props.default
 			}>
-			<div className={props.iconShadow ? "text-shadow-lg shadow-[#000000bb] w-6" : "w-5"}>
+			<div className={props.iconShadow ? "text-shadow-lg shadow-[#000000bb] w-6" : "w-6"}>
 				<DiscordIcon changeIcon={props.changeIcon} />
 			</div>
 			<h1

@@ -24,7 +24,7 @@ const Profile = () => {
 	}, []);
 
 	return (
-		<div className="h-[110vh] bg-blackish">
+		<div className="h-[110vh] bg-blackishDark">
 			{isLoading ? (
 				<h1 className="pt-52 font-hanken text-xl text-white opacity-50">Loading profile...</h1>
 			) : user?.id ? (
@@ -32,7 +32,7 @@ const Profile = () => {
 					{/* Left navigation bar */}
 					<Navigation logoutHandler={logoutHandler} />
 					{/* User dashboard */}
-					<div className="flex w-full flex-col items-center justify-start gap-5 bg-blackish">
+					<div className="flex w-full flex-col items-center justify-start gap-5 bg-blackish rounded-tl-bigger">
 						{/* User info card*/}
 						<div className="flex w-2/3 items-start justify-center">
 							<div className="mt-20 flex h-44 w-full items-center justify-start gap-5 rounded-[75px] bg-blackishDark">
@@ -41,7 +41,6 @@ const Profile = () => {
 									<h1 className="font-poppins text-5xl font-bold">{user.discord.name}</h1>
 									<p className="font-hanken font-medium">ID: {user.id}</p>
 								</div>
-								<div className="text-white">social icons</div>
 							</div>
 						</div>
 

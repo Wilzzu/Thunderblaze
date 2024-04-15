@@ -6,7 +6,7 @@ const Feedback = () => {
 		<div className="centerDiv max-w-[1280px]">
 			<div className="flex h-[850px] items-center justify-center gap-32">
 				{/* LEFT */}
-				<img src={heroImg} alt="Moderator Image" className="w-[38%]" />
+				<img src={heroImg} alt="Moderator Image" className="w-[38%] drop-shadow-2xl" />
 
 				{/* RIGHT */}
 				<div className="flex w-[30%] flex-col gap-2">

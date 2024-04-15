@@ -11,7 +11,7 @@ const footerItems = [
 		path: "/videos",
 	},
 	{
-		name: "Stats",
+		name: "Statistics",
 		path: "/stats",
 	},
 	{

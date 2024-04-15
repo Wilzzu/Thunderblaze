@@ -1,12 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ProfileButton from "../login/ProfileButton";
 import LoginButton from "../login/LoginButton";
 import NavItem from "./NavItem";
 import logo from "../../assets/logo-256.png";
 
 const LargeNav = (props) => {
+	const { pathname } = useLocation();
 	return (
-		<div className="hidden md:flex h-[3.90rem] w-full content-center justify-between bg-[#f8f8f8] py-2 px-6">
+		<div
+			className={
+				"hidden md:flex h-[3.90rem] w-full content-center justify-between py-2 px-6 " +
+				(pathname === "/videos"
+					? "bg-[#0F0F0F] text-whiteish"
+					: pathname === "/feedback" || pathname === "/profile"
+					? "bg-blackishDark text-whiteish"
+					: "bg-[#f8f8f8] text-black")
+			}>
 			{/* Left clan icon */}
 			<Link to="/">
 				<div className="h-full w-32 lg:w-64">

@@ -34,12 +34,12 @@ const SocialCard = (props) => {
 									</h1>
 									<div className="flex items-center justify-center gap-4">
 										<button
-											className="h-[6vh] w-[7vw] rounded-xl bg-red-600 font-hanken text-base font-medium text-whiteish duration-150 hover:scale-105 hover:shadow-custom2 hover:shadow-[#c72e2e]"
+											className="p-4 px-10 rounded-xl bg-red-600 font-hanken text-base font-medium text-whiteish duration-150 hover:scale-105 hover:shadow-custom2 hover:shadow-[#c72e2e]"
 											onClick={handleUnlinkUser}>
 											Yes
 										</button>
 										<button
-											className="h-[6vh] w-[7vw] rounded-xl border-2 border-blackishLight font-hanken text-base font-medium text-[#696969] duration-150 hover:bg-blackishLight hover:text-whiteish hover:shadow-custom2 hover:shadow-[#00000057]"
+											className="p-4 px-10 rounded-xl border-2 border-blackishLight font-hanken text-base font-medium text-[#696969] duration-150 hover:bg-blackishLight hover:text-whiteish hover:shadow-custom2 hover:shadow-[#00000057]"
 											onClick={close}>
 											Cancel
 										</button>
