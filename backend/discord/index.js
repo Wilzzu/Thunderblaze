@@ -25,6 +25,7 @@ const client = new Client({
 client.once(Events.ClientReady, async (e) => {
 	console.log(`Discord bot online! Logged in as ${e.user.tag}`.blue);
 	await dcGetMembers(true);
+	setInterval(() => updateMessages(), 5 * 60 * 1000); // Update messages every 5 minutes
 });
 
 // Global values
@@ -45,8 +46,43 @@ const addBtn = (label, url, emoji) => {
 	);
 };
 
+const messageCache = [];
+
+const addToMsgCache = (author) => {
+	const foundUser = messageCache.find((user) => user.id === author.id);
+	if (foundUser) {
+		const index = messageCache.indexOf(foundUser);
+		messageCache[index].newMessageAmount++;
+	} else {
+		messageCache.push({
+			id: author.id,
+			name: author.username,
+			avatar: author.displayAvatarURL(),
+			newMessageAmount: 1,
+		});
+	}
+};
+
+function updateMessages() {
+	if (!messageCache.length) return;
+	axios
+		.post(`${settings.apiLocation}/stats/discord/messages`, { cache: messageCache })
+		.then((res) => {
+			messageCache.length = 0;
+		})
+		.catch((error) => {
+			console.error("There was an error while updating messages!", error);
+		});
+}
+
 // Listen to new messages
 client.on("messageCreate", async (message) => {
+	// If message is from a bot or a DM, return
+	if (message.author.bot || !message.guild) return;
+
+	// Add to message cache
+	addToMsgCache(message.author);
+
 	// Check for commands
 	if (websiteCmd.includes(message.content.toLowerCase()))
 		message.reply({

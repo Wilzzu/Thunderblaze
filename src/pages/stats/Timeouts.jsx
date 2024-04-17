@@ -1,8 +1,8 @@
 import StatsSubNavigation from "../../components/stats/StatsSubNavigation";
-import useGetTimeouts from "../../hooks/stats/useGetDiscordStats";
+import useGetTimeouts from "../../hooks/stats/useGetTimeouts";
 import LoadingDots from "../../assets/LoadingDots";
-import axios from "axios";
-import settings from "../../settings.json";
+// import axios from "axios";
+// import settings from "../../settings.json";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import PodiumItem from "../../components/stats/PodiumItem";
@@ -12,22 +12,27 @@ const Timeouts = () => {
 	const [timeouts, setTimeouts] = useState([]);
 
 	// For getting most up to date info
+	// const getUserInfo = () => {
+	// 	axios.get(`${settings.apiLocation}/discord/members`).then((res) => {
+	// 		data.forEach((member) => {
+	// 			let user = res.data.find((members) => member.id === members.id);
+	// 			if (user)
+	// 				setTimeouts((e) => [
+	// 					...e,
+	// 					{
+	// 						id: user.id,
+	// 						name: user.nickname,
+	// 						avatar: user.avatar,
+	// 						timeouts: member.timeouts,
+	// 					},
+	// 				]);
+	// 		});
+	// 	});
+	// };
+
+	// For demo purposes
 	const getUserInfo = () => {
-		axios.get(`${settings.apiLocation}/discord/members`).then((res) => {
-			data.forEach((member) => {
-				let user = res.data.find((members) => member.id === members.id);
-				if (user)
-					setTimeouts((e) => [
-						...e,
-						{
-							id: user.id,
-							name: user.nickname,
-							avatar: user.avatar,
-							timeouts: member.timeouts,
-						},
-					]);
-			});
-		});
+		setTimeouts(data);
 	};
 
 	useEffect(() => {
@@ -86,7 +91,7 @@ const Timeouts = () => {
 						<div className="mb-10 flex flex-col items-center gap-5 rounded-b-2xl bg-whiteishDark pb-12 font-poppins font-bold">
 							{/* Top 3 Cards */}
 							{timeouts.map((e, i) => {
-								return i <= 2 && <PodiumItem key={e.id} user={e} pos={i} />;
+								return i <= 2 && <PodiumItem key={e.id} user={e} pos={i} value={"timeouts"} />;
 							})}
 						</div>
 

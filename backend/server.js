@@ -24,6 +24,7 @@ app.use(
 // Add api endpoints
 app.use("/api/feedback", require("./routes/feedbackRoutes"));
 app.use("/api/stats/discord/timeouts", require("./routes/timeoutsRoutes"));
+app.use("/api/stats/discord/messages", require("./routes/messagesRoutes"));
 app.use("/api/discord", require("./routes/discordRoutes"));
 app.use("/api/steam", require("./routes/steamRoutes"));
 app.use("/api/lichess", require("./routes/lichessRoutes"));

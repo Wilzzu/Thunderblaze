@@ -6,11 +6,18 @@ const styles = [
 	"h-12 rounded-[1.15rem] from-[#dd9a64] to-[#db9154]",
 ];
 
-const numStyles = [
-	"w-60 right-[-190px] text-8xl text-[#fff8e4] shadow-goldXD",
-	"w-60 right-[-210px] top-[0.20rem] text-6xl text-[#f3f3f3] shadow-[#C0C0C0]",
-	"w-28 right-[-90px] text-4xl text-[#fff9ed] shadow-[#b4915b]",
-];
+const numStyles = {
+	timeouts: [
+		"w-60 right-[-190px] text-8xl text-[#fff8e4] shadow-goldXD",
+		"w-60 right-[-210px] top-[0.20rem] text-6xl text-[#f3f3f3] shadow-[#C0C0C0]",
+		"w-28 right-[-90px] text-4xl text-[#fff9ed] shadow-[#b4915b]",
+	],
+	messages: [
+		"w-60 right-[-70px] text-8xl text-[#fff8e4] shadow-goldXD",
+		"w-60 right-[-110px] top-[0.20rem] text-6xl text-[#f3f3f3] shadow-[#C0C0C0]",
+		"w-28 right-[-40px] text-4xl text-[#fff9ed] shadow-[#b4915b]",
+	],
+};
 
 const transition = [
 	{ dur: 0.6, del: 0.3 },
@@ -65,8 +72,10 @@ const PodiumItem = (props) => {
 					ease: "backOut",
 					delay: props.pos === 0 ? 0.8 : props.pos === 1 ? 1 : 1.2,
 				}}
-				className={"absolute text-left font-black text-shadow-lg " + numStyles[props.pos]}>
-				{props.user.timeouts}
+				className={
+					"absolute text-left font-black text-shadow-lg " + numStyles[props.value][props.pos]
+				}>
+				{props.user[props.value]}
 			</motion.h1>
 		</motion.div>
 	);

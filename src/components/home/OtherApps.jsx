@@ -7,7 +7,7 @@ import { useInView } from "framer-motion";
 
 const OtherApps = () => {
 	const ref = useRef(null);
-	const isInView = useInView(ref, { once: false });
+	const isInView = useInView(ref, { once: true });
 
 	return (
 		<div className="relative">

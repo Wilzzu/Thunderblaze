@@ -28,7 +28,6 @@ import Privacy from "./pages/Privacy";
 import Stats from "./pages/Stats";
 import Timeouts from "./pages/stats/Timeouts";
 import Messages from "./pages/stats/Messages";
-import Debts from "./pages/stats/Debts";
 
 function App() {
 	const client = new QueryClient({
@@ -48,7 +47,6 @@ function App() {
 				<Route path="/stats" element={<Stats />} />
 				<Route path="/stats/timeouts" element={<Timeouts />} />
 				<Route path="/stats/messages" element={<Messages />} />
-				<Route path="/stats/debts" element={<Debts />} />
 				<Route path="/profile" element={<Profile />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/privacy" element={<Privacy />} />
