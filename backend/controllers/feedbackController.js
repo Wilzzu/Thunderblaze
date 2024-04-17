@@ -6,6 +6,12 @@ const Feedback = require("../models/feedbackModel");
 const getFeedback = asyncHandler(async (req, res) => {
 	// Find all feedbacks and return them
 	const feedback = await Feedback.find();
+
+	// Redact all feedbacks for demo purposes
+	feedback.forEach((e) => {
+		e.text = "[REDACTED FOR DEMO]";
+	});
+
 	res.status(200).json(feedback);
 });
 

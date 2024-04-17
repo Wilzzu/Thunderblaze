@@ -199,7 +199,7 @@ const Feedback = () => {
 							)}
 						</AnimatePresence>
 						{/* List feedbacks */}
-						{allFeedbacks && (
+						{allFeedbacks && user.website.isModerator && (
 							<motion.div
 								animate={{ opacity: 1 }}
 								initial={{ opacity: 0 }}
