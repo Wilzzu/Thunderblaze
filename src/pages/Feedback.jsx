@@ -209,6 +209,35 @@ const Feedback = () => {
 									<p className="text-sm font-light">Only visible to moderators</p>
 								</div>
 								<div className="scrollNormal scrollRight scrollPadding flex max-h-[640px] w-1/2 flex-col items-start justify-start gap-2 overflow-auto rounded-3xl bg-blackishLight p-10 scrollbar scrollbar-thumb-lime scrollbar-thumb-rounded-full scrollbar-w-7">
+									{/* Example feedbacks for demo */}
+									<FeedbackCard
+										key={"example-1"}
+										feedback={{
+											_id: "example-1",
+											anon: true,
+											text: "This is an example feedback",
+											createdAt: new Date(),
+										}}
+										pos={0}
+										setOpenedFeedback={setOpenedFeedback}
+										openedFeedback={openedFeedback}
+										loggedUser={user}
+									/>
+									<FeedbackCard
+										key={"example-2"}
+										feedback={{
+											_id: "example-2",
+											anon: true,
+											text: "This is a long example feedback. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur nemo aliquam possimus, quam nesciunt odio inventore illum sed maxime. Consectetur doloremque debitis placeat ea aspernatur inventore, error commodi? Tenetur, fuga?",
+											createdAt: new Date(),
+										}}
+										pos={1}
+										setOpenedFeedback={setOpenedFeedback}
+										openedFeedback={openedFeedback}
+										loggedUser={user}
+									/>
+
+									{/* Real feedbacks */}
 									{allFeedbacks
 										?.slice(0)
 										.reverse()

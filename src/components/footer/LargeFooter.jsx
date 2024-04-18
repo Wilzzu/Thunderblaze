@@ -10,10 +10,13 @@ const LargeFooter = (props) => {
 					{props.items.map((e, i) => {
 						if (i >= 3) return;
 						return (
-							<div
-								key={i}
-								className="underline-offset-2 decoration-2 hover:decoration-lime hover:underline">
-								<Link to={e.path}>{e.name}</Link>
+							<div key={i}>
+								<Link
+									key={i}
+									to={e.path}
+									className="underline-offset-2 decoration-2 hover:decoration-lime hover:underline">
+									{e.name}
+								</Link>
 							</div>
 						);
 					})}
@@ -23,10 +26,12 @@ const LargeFooter = (props) => {
 					{props.items.map((e, i) => {
 						if (i <= 2) return;
 						return (
-							<div
-								key={i}
-								className="underline-offset-2 decoration-2 hover:decoration-lime hover:underline">
-								<Link to={e.path}>{e.name}</Link>
+							<div key={i}>
+								<Link
+									to={e.path}
+									className="underline-offset-2 decoration-2 hover:decoration-lime hover:underline">
+									{e.name}
+								</Link>
 							</div>
 						);
 					})}

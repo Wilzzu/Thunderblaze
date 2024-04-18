@@ -28,6 +28,7 @@ import Privacy from "./pages/Privacy";
 import Stats from "./pages/Stats";
 import Timeouts from "./pages/stats/Timeouts";
 import Messages from "./pages/stats/Messages";
+import DemoMode from "./global/DemoMode";
 
 function App() {
 	const client = new QueryClient({
@@ -78,6 +79,7 @@ const Root = () => {
 				autoHide={window.innerWidth > 1024 ? false : true}>
 				<Gdpr />
 				<Navbar />
+				<DemoMode />
 				<div>
 					<Outlet /> {/* Other content */}
 				</div>

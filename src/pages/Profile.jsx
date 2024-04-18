@@ -38,7 +38,7 @@ const Profile = () => {
 							<div className="mt-20 flex h-44 w-full items-center justify-start gap-5 rounded-[75px] bg-blackishDark">
 								<img src={user.discord.picture} alt="" className="ml-9 w-28 rounded-full" />
 								<div className="flex flex-col items-start justify-center text-whiteish">
-									<h1 className="font-poppins text-5xl font-bold">{user.discord.name}</h1>
+									<h1 className="font-poppins text-3xl font-bold">{user.discord.name}</h1>
 									<p className="font-hanken font-medium">ID: {user.id}</p>
 								</div>
 							</div>
