@@ -19,6 +19,10 @@ const feedbackSchema = mongoose.Schema(
 			type: Boolean,
 			require: true,
 		},
+		demo: {
+			type: Boolean,
+			require: false,
+		},
 	},
 	{
 		timestamps: true,

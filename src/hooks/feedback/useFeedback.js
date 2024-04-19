@@ -37,6 +37,7 @@ const useFeedback = () => {
 			id: user.id,
 			name: user.discord.name,
 			anon: anon,
+			demo: user.demo ? true : false,
 		};
 		axios
 			.post(`${settings.apiLocation}/feedback`, data)

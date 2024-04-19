@@ -13,10 +13,25 @@ const loggedUser = createSlice({
 	},
 });
 
+const demoUser = createSlice({
+	name: "demoUser",
+	initialState: { user: {} },
+	reducers: {
+		addDemoUser: (state, action) => {
+			state.user = action.payload;
+		},
+		removeDemoUser: (state) => {
+			state.user = {};
+		},
+	},
+});
+
 export const { addUserInfo, removeUserInfo } = loggedUser.actions;
+export const { addDemoUser, removeDemoUser } = demoUser.actions;
 
 export const store = configureStore({
 	reducer: {
 		loggedUser: loggedUser.reducer,
+		demoUser: demoUser.reducer,
 	},
 });

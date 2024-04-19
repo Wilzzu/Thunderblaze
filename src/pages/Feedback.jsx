@@ -8,10 +8,13 @@ import useFeedback from "../hooks/feedback/useFeedback";
 import FeedbackButton from "../components/feedback/FeedbackButton";
 import FeedbackCard from "../components/feedback/FeedbackCard";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Feedback = () => {
 	// Variables for user
 	const { getUser } = useGetLoggedInUser();
+	const loggedUser = useSelector((state) => state.loggedUser.user);
+	const demoUser = useSelector((state) => state.demoUser.user);
 	const [user, setUser] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const [showLoadingText, setShowLoadingText] = useState(false);
@@ -40,16 +43,20 @@ const Feedback = () => {
 	const [openedFeedback, setOpenedFeedback] = useState(false);
 
 	// Function for getting logged in user's details
-	const getUserLogin = async () => {
-		setUser(await getUser(null, true));
+	const getUserLogin = async (loggedUser, demo) => {
+		setUser(await getUser(loggedUser, true, demo));
 		setIsLoading(false);
 	};
 
 	// Start updating current time and get users login
 	useEffect(() => {
 		setInterval(() => setCurrTime(getDate()), 1000);
-		getUserLogin();
 	}, []);
+
+	useEffect(() => {
+		if (demoUser && Object.keys(demoUser)?.length) getUserLogin(demoUser, true);
+		else if (loggedUser) getUserLogin(loggedUser, false);
+	}, [loggedUser, demoUser]);
 
 	// Change to confirmation div
 	useEffect(() => {
@@ -208,7 +215,7 @@ const Feedback = () => {
 									<h1>Feedbacks</h1>
 									<p className="text-sm font-light">Only visible to moderators</p>
 								</div>
-								<div className="scrollNormal scrollRight scrollPadding flex max-h-[640px] w-1/2 flex-col items-start justify-start gap-2 overflow-auto rounded-3xl bg-blackishLight p-10 scrollbar scrollbar-thumb-lime scrollbar-thumb-rounded-full scrollbar-w-7">
+								<div className="scrollNormal scrollRight scrollPadding flex max-h-[640px] w-1/2 flex-col items-start justify-start gap-2 overflow-auto rounded-3xl bg-blackishLight p-10 scrollbar scrollbar-thumb-lime scrollbar-thumb-rounded-full scrollbar-w-2">
 									{/* Example feedbacks for demo */}
 									<FeedbackCard
 										key={"example-1"}

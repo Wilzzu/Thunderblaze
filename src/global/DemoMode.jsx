@@ -56,7 +56,7 @@ const DemoMode = () => {
 								demoUser?.demo?.type === "logged" && "bg-blue-400"
 							)}
 							onClick={() => handleDemoMode("logged")}>
-							Logged in
+							Non-Member
 						</button>
 						<button
 							className={cn(

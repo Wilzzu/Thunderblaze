@@ -17,8 +17,9 @@ const ProfileButton = (props) => {
 	};
 
 	useEffect(() => {
-		validateAvatar();
-	}, []);
+		if (!props?.demo) validateAvatar();
+		else setAvatar(props.discord?.picture);
+	}, [props?.demo]);
 
 	return (
 		<Link

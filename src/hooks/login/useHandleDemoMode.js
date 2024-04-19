@@ -1,6 +1,7 @@
 import { useState } from "react";
-import useSessionStorage from "../useSessionStorage";
 import anonImg from "../../assets/anonImg.jpg";
+import { useDispatch } from "react-redux";
+import { addDemoUser } from "../../store";
 
 const demoUserObject = {
 	id: "1",
@@ -20,8 +21,8 @@ const demoUserObject = {
 };
 
 const useHandleDemoMode = () => {
-	const { getSessionItem, setSessionItem } = useSessionStorage();
-	const [demoUser, setDemoUser] = useState(getSessionItem("ThunderblazeSession", "demo") || null);
+	const [demoUser, setDemoUser] = useState(null);
+	const dispatch = useDispatch();
 
 	const handleDemoMode = (type) => {
 		let user = demoUserObject;
@@ -29,7 +30,7 @@ const useHandleDemoMode = () => {
 			case "logged":
 				user = {
 					...demoUserObject,
-					discord: { ...demoUserObject.discord, name: "Logged, non member demo user" },
+					discord: { ...demoUserObject.discord, name: "Non-Member demo user" },
 					demo: { type: "logged" },
 				};
 				break;
@@ -53,8 +54,8 @@ const useHandleDemoMode = () => {
 				break;
 		}
 		console.log("Setting demo user", user);
-		setSessionItem("ThunderblazeSession", "demo", user);
 		setDemoUser(user);
+		dispatch(addDemoUser(user));
 	};
 	return { demoUser, handleDemoMode };
 };

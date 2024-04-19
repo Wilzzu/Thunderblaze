@@ -6,7 +6,7 @@ const FeedbackButton = (props) => {
 	const [showBtnText, setShowBtnText] = useState(false);
 	const [disableBtn, setDisableBtn] = useState(false);
 	const [timeLeft, setTimeLeft] = useState(null);
-
+	console.log(props.user);
 	const timeLimit = 3600000;
 	// const timeLimit = 3600000;
 

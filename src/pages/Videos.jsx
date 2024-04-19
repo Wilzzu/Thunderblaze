@@ -24,20 +24,27 @@ const Videos = () => {
 
 	// Getting user data
 	const loggedUser = useSelector((state) => state.loggedUser.user);
+	const demoUser = useSelector((state) => state.demoUser.user);
 	const { getUser } = useGetLoggedInUser();
 	const [user, setUser] = useState(loggedUser);
 
 	// Get logged user manually
-	const getLoggedUser = async (curUser) => {
-		setUser(await getUser(curUser));
+	const getLoggedUser = async (curUser, demo) => {
+		setUser(await getUser(curUser, false, demo));
 	};
 
+	// useEffect(() => {
+	// 	if (!privateData) getLoggedUser();
+	// }, []);
+
 	useEffect(() => {
-		if (!privateData) getLoggedUser();
-	}, []);
+		if (demoUser && Object.keys(demoUser)?.length) getLoggedUser(demoUser, true);
+		else if (loggedUser) getLoggedUser(loggedUser, false);
+	}, [loggedUser, demoUser]);
 
 	// Get logged in user's session token
 	const getUserSession = async () => {
+		if (demoUser && Object.keys(demoUser).length > 1) return setToken("demo");
 		const { data } = await supabase.auth.getSession();
 		if (data) setToken(data.session.access_token);
 	};

@@ -9,19 +9,21 @@ import { useSelector } from "react-redux";
 
 const Profile = () => {
 	const loggedUser = useSelector((state) => state.loggedUser.user);
+	const demoUser = useSelector((state) => state.demoUser.user);
 	const [isLoading, setIsLoading] = useState(true);
 	const { getUser } = useGetLoggedInUser();
 	const { logoutHandler } = useHandleLogout();
 	const [user, setUser] = useState(loggedUser);
 
-	const getUserLogin = async (curUser) => {
-		setUser(await getUser(curUser));
+	const getUserLogin = async (curUser, demo) => {
+		setUser(await getUser(curUser, false, demo));
 		setIsLoading(false);
 	};
 
 	useEffect(() => {
-		getUserLogin(loggedUser);
-	}, []);
+		if (demoUser && Object.keys(demoUser)?.length) getUserLogin(demoUser, true);
+		else if (loggedUser) getUserLogin(loggedUser, false);
+	}, [loggedUser, demoUser]);
 
 	return (
 		<div className="h-[110vh] bg-blackishDark">

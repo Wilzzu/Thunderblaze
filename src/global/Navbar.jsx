@@ -39,29 +39,37 @@ const navItems = [
 
 const Navbar = () => {
 	const [isLoading, setIsLoading] = useState(true);
+	const [user, setUser] = useState({});
 	const dispatch = useDispatch();
 	const loggedUser = useSelector((state) => state.loggedUser.user);
+	const demoUser = useSelector((state) => state.demoUser.user);
 	const { getUser } = useGetLoggedInUser();
 	const { pathname } = useLocation();
 
 	// Get user session info and put it to loggedUser store
-	const getUserLogin = async (loggedUser) => {
-		let userLogin = await getUser(loggedUser);
+	const getUserLogin = async (loggedUser, demo) => {
+		let userLogin = await getUser(loggedUser, false, demo);
+		setUser(userLogin);
+
 		setIsLoading(false);
 
-		if (userLogin?.id !== null) {
+		if (userLogin?.id !== null && !userLogin?.demo) {
 			dispatch(addUserInfo(userLogin));
 		}
 	};
 
 	useEffect(() => {
-		getUserLogin(loggedUser);
-	}, []);
+		if (demoUser && Object.keys(demoUser)?.length) getUserLogin(demoUser, true);
+		else {
+			console.log(loggedUser);
+			getUserLogin(loggedUser, false);
+		}
+	}, [loggedUser, demoUser]);
 
 	return (
 		<div className="sticky top-0 z-[999]">
-			<LargeNav items={navItems} path={pathname} user={loggedUser} isLoading={isLoading} />
-			<MobileNav items={navItems} user={loggedUser} isLoading={isLoading} />
+			<LargeNav items={navItems} path={pathname} user={user} isLoading={isLoading} />
+			<MobileNav items={navItems} user={user} isLoading={isLoading} />
 		</div>
 	);
 };

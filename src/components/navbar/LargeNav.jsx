@@ -39,8 +39,8 @@ const LargeNav = (props) => {
 					<div className="h-11 w-[7.6rem] animate-pulseLight rounded-xl bg-blackishLight opacity-30" />
 				) : (
 					<>
-						{props.user && Object.keys(props.user).length ? (
-							<ProfileButton discord={props.user.discord} />
+						{props.user && Object.keys(props.user).length && props.user?.id ? (
+							<ProfileButton discord={props.user.discord} demo={props?.user?.demo} />
 						) : (
 							<LoginButton
 								hover="hover:scale-[1.03] hover:shadow-custom4 hover:shadow-[#000000] hover:bg-transparent hover:text-blackishLight group"

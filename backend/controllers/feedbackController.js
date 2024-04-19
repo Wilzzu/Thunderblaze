@@ -42,6 +42,7 @@ const setFeedback = asyncHandler(async (req, res) => {
 		name: req.body.name,
 		text: req.body.text,
 		anon: req.body.anon,
+		demo: req.body?.demo,
 	});
 
 	// Return created feedback info

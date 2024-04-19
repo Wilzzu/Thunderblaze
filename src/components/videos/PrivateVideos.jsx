@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import LoadingDots from "../../assets/LoadingDots";
 
 const PrivateVideos = (props) => {
+	console.log(props.user);
+
 	if (Object.keys(props.user).length > 0 && props.user?.id == null) {
 		return (
 			<motion.div
@@ -33,6 +35,13 @@ const PrivateVideos = (props) => {
 			</motion.div>
 		);
 	}
+	if (props.user?.discord?.groupMember == false) {
+		return (
+			<div className="flex h-[185px] items-center justify-center">
+				<p>Only Thunderblaze members can watch private videos.</p>
+			</div>
+		);
+	}
 
 	if (props.loading) {
 		return (
@@ -44,20 +53,13 @@ const PrivateVideos = (props) => {
 	}
 
 	if (props.error) {
-		if (props.user?.discord.groupMember == false)
-			return (
-				<div className="flex h-[185px] items-center justify-center">
-					<p>Only Thunderblaze members can watch private videos.</p>
+		return (
+			<div className="flex justify-center font-hanken text-white">
+				<div className="py-2 px-5 border-4 border-red-600 rounded-xl">
+					<p className="text-xl">An error occurred while trying to fetch private videos.</p>
 				</div>
-			);
-		else
-			return (
-				<div className="flex justify-center font-hanken text-white">
-					<div className="py-2 px-5 border-4 border-red-600 rounded-xl">
-						<p className="text-xl">An error occurred while trying to fetch private videos.</p>
-					</div>
-				</div>
-			);
+			</div>
+		);
 	}
 
 	const [videos, setVideos] = useState([...props.data]);
