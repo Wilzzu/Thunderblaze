@@ -3,7 +3,7 @@ import GroupBenefit from "./GroupBenefit";
 
 const GroupCard = () => {
 	return (
-		<div className="relative grid h-56 w-full rounded-[40px] pl-16 border-2 border-goldXD bg-gradient-to-r from-[#232323] to-[#333333] shadow-custom2 shadow-[#ffd0377e]">
+		<div className="relative grid h-56 w-full rounded-[40px] pl-16 border-2 border-goldXD bg-gradient-to-tl from-[#232323] to-[#333333] shadow-custom2 shadow-[#ffd0377e]">
 			<img
 				src={logoGold}
 				alt="Golden logo"

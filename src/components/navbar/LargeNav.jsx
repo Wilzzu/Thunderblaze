@@ -43,7 +43,7 @@ const LargeNav = (props) => {
 							<ProfileButton discord={props.user.discord} demo={props?.user?.demo} />
 						) : (
 							<LoginButton
-								hover="hover:scale-[1.03] hover:shadow-custom4 hover:shadow-[#000000] hover:bg-transparent hover:text-blackishLight group"
+								hover="hover:scale-[1.03] hover:shadow-custom4 hover:shadow-[#000000] hover:bg-whiteish hover:text-blackishLight group"
 								changeIcon={true}
 								default={
 									" h-11 w-11 lg:w-[7.6rem] border-2 border-blackishLight bg-blackishLight lg:rounded-xl"

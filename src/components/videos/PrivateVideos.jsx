@@ -38,7 +38,9 @@ const PrivateVideos = (props) => {
 	if (props.user?.discord?.groupMember == false) {
 		return (
 			<div className="flex h-[185px] items-center justify-center">
-				<p>Only Thunderblaze members can watch private videos.</p>
+				<p className="font-poppins p-6 bg-gradient-to-r from-[#232323] to-[#333333] shadow-custom2 rounded-lg">
+					Only Thunderblaze members can watch private videos.
+				</p>
 			</div>
 		);
 	}

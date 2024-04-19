@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addDemoUser } from "../../store";
 
 const demoUserObject = {
-	id: "1",
+	id: `Demo#1234`,
 	discord: {
 		name: "Demo user",
 		picture: anonImg,
@@ -30,6 +30,7 @@ const useHandleDemoMode = () => {
 			case "logged":
 				user = {
 					...demoUserObject,
+					id: `Demo-${Math.floor(Math.random() * 1000000)}`,
 					discord: { ...demoUserObject.discord, name: "Non-Member demo user" },
 					demo: { type: "logged" },
 				};
@@ -37,6 +38,7 @@ const useHandleDemoMode = () => {
 			case "member":
 				user = {
 					...demoUserObject,
+					id: `Demo-${Math.floor(Math.random() * 1000000)}`,
 					discord: { ...demoUserObject.discord, name: "Member demo user", groupMember: true },
 					demo: { type: "member" },
 				};
@@ -44,6 +46,7 @@ const useHandleDemoMode = () => {
 			case "moderator":
 				user = {
 					...demoUserObject,
+					id: `Demo-${Math.floor(Math.random() * 1000000)}`,
 					discord: { ...demoUserObject.discord, name: "Moderator demo user", groupMember: true },
 					website: { ...demoUserObject.website, isModerator: true },
 					demo: { type: "moderator" },

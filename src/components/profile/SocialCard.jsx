@@ -57,6 +57,7 @@ const SocialCard = (props) => {
 					</div>
 					<button
 						onClick={handleLinkUser}
+						disabled={props.user?.demo}
 						className="h-10 w-24 rounded-xl border-2 border-[#53FF4D] font-poppins text-sm font-semibold text-[#53FF4D] opacity-90 shadow-[#00000075] duration-150 text-shadow disabled:opacity-20 hover:bg-[#53ff4d50] hover:text-whiteish hover:opacity-100 disabled:hover:bg-transparent disabled:hover:text-[#53FF4D] disabled:hover:opacity-20">
 						Connect
 					</button>

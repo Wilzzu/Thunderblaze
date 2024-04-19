@@ -37,7 +37,7 @@ const Profile = () => {
 					<div className="flex w-full flex-col items-center justify-start gap-5 bg-blackish rounded-tl-bigger">
 						{/* User info card*/}
 						<div className="flex w-2/3 items-start justify-center">
-							<div className="mt-20 flex h-44 w-full items-center justify-start gap-5 rounded-[75px] bg-blackishDark">
+							<div className="mt-20 flex h-44 w-full items-center justify-start gap-5 rounded-[75px] bg-gradient-to-tl from-[#232323] to-[#333333] shadow-custom2">
 								<img src={user.discord.picture} alt="" className="ml-9 w-28 rounded-full" />
 								<div className="flex flex-col items-start justify-center text-whiteish">
 									<h1 className="font-poppins text-3xl font-bold">{user.discord.name}</h1>
@@ -48,9 +48,20 @@ const Profile = () => {
 
 						<div className="grid w-2/3 grid-cols-2 gap-5">
 							{/* Group Info card */}
-							{user.discord.groupMember ? <GroupCard /> : <div>Not a member</div>}
+							{user.discord.groupMember ? (
+								<GroupCard />
+							) : (
+								<div className="relative grid h-56 w-full rounded-[40px] bg-gradient-to-tl from-[#232323] to-[#333333] shadow-custom2">
+									<div className="h-full w-full flex flex-col items-center justify-center gap-2 text-whiteish font-poppins ">
+										<h1 className="text-lg">Not a Thunderblaze member</h1>
+										<p className="text-sm font-light">
+											Some features are only available for Thunderblaze members.
+										</p>
+									</div>
+								</div>
+							)}
 							{/* Link accounts card */}
-							<LinkedAccounts />
+							<LinkedAccounts user={user} />
 							{/* Privacy policy settings will be here */}
 							{/* <div className="w-full bg-blackishDarkest text-whiteish font-poppins font-semibold h-24 flex items-center justify-center rounded-2xl">Privacy policy</div> */}
 						</div>
