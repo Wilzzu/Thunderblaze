@@ -27,19 +27,19 @@ const useHandleDemoMode = () => {
 	const handleDemoMode = (type) => {
 		let user = demoUserObject;
 		switch (type) {
-			case "logged":
+			case "non-member":
 				user = {
 					...demoUserObject,
 					id: `Demo-${Math.floor(Math.random() * 1000000)}`,
-					discord: { ...demoUserObject.discord, name: "Non-Member demo user" },
-					demo: { type: "logged" },
+					discord: { ...demoUserObject.discord, name: "Non-Member (Demo)" },
+					demo: { type: "non-member" },
 				};
 				break;
 			case "member":
 				user = {
 					...demoUserObject,
 					id: `Demo-${Math.floor(Math.random() * 1000000)}`,
-					discord: { ...demoUserObject.discord, name: "Member demo user", groupMember: true },
+					discord: { ...demoUserObject.discord, name: "Member (Demo)", groupMember: true },
 					demo: { type: "member" },
 				};
 				break;
@@ -47,7 +47,7 @@ const useHandleDemoMode = () => {
 				user = {
 					...demoUserObject,
 					id: `Demo-${Math.floor(Math.random() * 1000000)}`,
-					discord: { ...demoUserObject.discord, name: "Moderator demo user", groupMember: true },
+					discord: { ...demoUserObject.discord, name: "Moderator (Demo)", groupMember: true },
 					website: { ...demoUserObject.website, isModerator: true },
 					demo: { type: "moderator" },
 				};
