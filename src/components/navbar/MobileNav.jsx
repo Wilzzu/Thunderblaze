@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import LoginButton from "../login/LoginButton";
 import ProfileButton from "../login/ProfileButton";
 import { Sling as Hamburger } from "hamburger-react";
+import LogoutButton from "./LogoutButton";
 
 // Framer motion variants
 const container = {
@@ -107,6 +108,10 @@ const MobileNav = (props) => {
 								{props.items.map((e, i) => {
 									return <MobileItem key={i} item={e} setToggled={() => setToggled(false)} />;
 								})}
+								{props.user &&
+									Object.keys(props.user).length &&
+									props.user?.id &&
+									!props.user?.demo && <LogoutButton />}
 							</motion.div>
 						</motion.div>
 						{/* Dark background */}

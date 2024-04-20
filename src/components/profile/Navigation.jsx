@@ -39,7 +39,7 @@ const Navigation = (props) => {
 						<div className="group flex items-center justify-start gap-4 rounded-3xl py-6 pl-12  duration-150 hover:bg-red-500 opacity-90">
 							<MdLogout fill="white" className="w-auto h-7" />
 							<h1 className="text-left font-poppins text-2xl font-semibold text-red-500 duration-150 group-hover:text-white">
-								Logout
+								Log out
 							</h1>
 						</div>
 					</button>
