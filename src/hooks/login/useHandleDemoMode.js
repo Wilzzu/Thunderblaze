@@ -30,7 +30,7 @@ const useHandleDemoMode = () => {
 			case "non-member":
 				user = {
 					...demoUserObject,
-					id: `Demo-${Math.floor(Math.random() * 1000000)}`,
+					id: `demo-${Math.floor(Math.random() * 1000000)}`,
 					discord: { ...demoUserObject.discord, name: "Non-Member (Demo)" },
 					demo: { type: "non-member" },
 				};
@@ -38,7 +38,7 @@ const useHandleDemoMode = () => {
 			case "member":
 				user = {
 					...demoUserObject,
-					id: `Demo-${Math.floor(Math.random() * 1000000)}`,
+					id: `demo-${Math.floor(Math.random() * 1000000)}`,
 					discord: { ...demoUserObject.discord, name: "Member (Demo)", groupMember: true },
 					demo: { type: "member" },
 				};
@@ -46,7 +46,7 @@ const useHandleDemoMode = () => {
 			case "moderator":
 				user = {
 					...demoUserObject,
-					id: `Demo-${Math.floor(Math.random() * 1000000)}`,
+					id: `demo-${Math.floor(Math.random() * 1000000)}`,
 					discord: { ...demoUserObject.discord, name: "Moderator (Demo)", groupMember: true },
 					website: { ...demoUserObject.website, isModerator: true },
 					demo: { type: "moderator" },

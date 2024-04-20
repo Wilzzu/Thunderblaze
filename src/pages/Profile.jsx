@@ -34,24 +34,30 @@ const Profile = () => {
 					{/* Left navigation bar */}
 					<Navigation logoutHandler={logoutHandler} />
 					{/* User dashboard */}
-					<div className="flex w-full flex-col items-center justify-start gap-5 bg-blackish rounded-tl-bigger">
+					<div className="flex w-full flex-col items-center justify-start gap-5 bg-blackish px-2 lg:px-0 lg:rounded-tl-bigger">
 						{/* User info card*/}
-						<div className="flex w-2/3 items-start justify-center">
-							<div className="mt-20 flex h-44 w-full items-center justify-start gap-5 rounded-[75px] bg-gradient-to-tl from-[#232323] to-[#333333] shadow-custom2">
-								<img src={user.discord.picture} alt="" className="ml-9 w-28 rounded-full" />
-								<div className="flex flex-col items-start justify-center text-whiteish">
-									<h1 className="font-poppins text-3xl font-bold">{user.discord.name}</h1>
-									<p className="font-hanken font-medium">ID: {user.id}</p>
+						<div className="flex w-full lg:w-2/3 items-start justify-center">
+							<div className="mt-14 lg:mt-20 flex lg:h-44 w-full items-center justify-start p-4 lg:p-0 gap-3 lg:gap-5 rounded-[75px] bg-gradient-to-tl from-[#232323] to-[#333333] shadow-custom2">
+								<img
+									src={user.discord.picture}
+									alt="Profile picture"
+									className="lg:ml-9 w-16 lg:w-28 rounded-full"
+								/>
+								<div className="flex flex-col items-start justify-center text-whiteish w-full overflow-hidden">
+									<h1 className="text-left font-poppins text-xl lg:text-3xl font-bold truncate w-full">
+										{user.discord.name}
+									</h1>
+									<p className="font-hanken text-sm lg:text-base font-medium">ID: {user.id}</p>
 								</div>
 							</div>
 						</div>
 
-						<div className="grid w-2/3 grid-cols-2 gap-5">
+						<div className="grid w-full lg:w-2/3 lg:grid-cols-2 gap-5">
 							{/* Group Info card */}
 							{user.discord.groupMember ? (
 								<GroupCard />
 							) : (
-								<div className="relative grid h-56 w-full rounded-[40px] bg-gradient-to-tl from-[#232323] to-[#333333] shadow-custom2">
+								<div className="relative grid h-56 w-full rounded-bigger lg:rounded-[40px] bg-gradient-to-tl from-[#232323] to-[#333333] shadow-custom2">
 									<div className="h-full w-full flex flex-col items-center justify-center gap-2 text-whiteish font-poppins ">
 										<h1 className="text-lg">Not a Thunderblaze member</h1>
 										<p className="text-sm font-light">

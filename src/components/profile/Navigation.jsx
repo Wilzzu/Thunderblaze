@@ -8,7 +8,7 @@ import { MdLogout } from "react-icons/md";
 
 const Navigation = (props) => {
 	return (
-		<div className="flex w-[400px] flex-col items-center justify-start gap-2 bg-blackishDark pt-36">
+		<div className="hidden lg:flex w-[400px] flex-col items-center justify-start gap-2 bg-blackishDark pt-36">
 			<Link to="/" className="w-full px-4">
 				<div className="flex items-center justify-start gap-4 rounded-3xl py-6 pl-12 duration-150 hover:bg-blackishDarkest">
 					<img src={homeIcon} alt="" className="w-7" />

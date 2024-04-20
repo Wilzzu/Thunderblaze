@@ -27,7 +27,7 @@ const SocialCard = (props) => {
 						{(close) => (
 							<div className="relative flex items-center justify-center">
 								<div onClick={close} className="absolute h-[100vh] w-[100vw] bg-[#00000071]"></div>
-								<div className="absolute p-8 px-20 text-nowrap flex flex-col items-center justify-center gap-8 rounded-bigger bg-gradient-to-b from-[#161616] to-[#1f1f1f]">
+								<div className="absolute p-8 px-20 lg:text-nowrap flex flex-col items-center justify-center gap-8 rounded-bigger bg-gradient-to-b from-[#161616] to-[#1f1f1f]">
 									<h1 className="font-hanken text-lg text-white">
 										Are you sure you want to remove linked{" "}
 										{props.social.charAt(0).toUpperCase() + props.social.slice(1)} account?
