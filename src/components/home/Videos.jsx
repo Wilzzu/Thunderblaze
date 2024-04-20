@@ -59,7 +59,7 @@ const Videos = () => {
 							<TiltVideoCard
 								size={"w-[11rem] lg:w-[16rem] h-[14rem] lg:h-[18rem]"}
 								pos={"top-[8rem] lg:top-[18rem] left-[2rem]  lg:left-[6rem]"}
-								hover={"hover:top-[16rem] hover:left-[3rem]"}
+								hover={"lg:hover:top-[16rem] lg:hover:left-[3rem]"}
 								z={"z-20"}
 								img={
 									"https://media0.giphy.com/media/2roTVUF0LFvZwYcCMb/giphy.gif?cid=ecf05e471ng66c3pzio9ku130putg1ga7bw8rovgnfolamgz&rid=giphy.gif&ct=g"
@@ -70,7 +70,7 @@ const Videos = () => {
 							<TiltVideoCard
 								size={"w-[13rem] lg:w-[20rem] h-[10rem] lg:h-[18rem]"}
 								pos={"top-[16rem] lg:top-[24rem] left-[6rem] lg:left-[11rem]"}
-								hover={"hover:top-[28rem]"}
+								hover={"lg:hover:top-[28rem]"}
 								z={"z-10"}
 								img={
 									"https://media0.giphy.com/media/aMalEwAvGOZptgEpAR/giphy.gif?cid=ecf05e47togy9eb6q1dcdeijzdhlulv3kwgu3my14bgfisuw&rid=giphy.gif&ct=g"

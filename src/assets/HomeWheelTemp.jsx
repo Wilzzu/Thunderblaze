@@ -1,7 +1,7 @@
 const HomeWheelTemp = () => {
 	return (
 		<svg
-			className="w-[170px] my-12 fill-lime duration-200 group-hover:fill-blackish group-hover:animate-spin-slow group-hover:w-[200px]"
+			className="w-[80px] lg:w-[170px] lg:my-12 fill-lime duration-200 group-hover:fill-blackish group-hover:animate-spin-slow group-hover:w-[100px] lg:group-hover:w-[200px]"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 293.42 293.41">
 			<path d="m40.18,45.83l91.01,91.01s-1.74,2.58-2.44,5.86l-128.74.03s-2.13-52.22,40.16-96.9Z" />

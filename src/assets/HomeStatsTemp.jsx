@@ -1,7 +1,7 @@
 const HomeStatsTemp = () => {
 	return (
 		<svg
-			className="w-[132px] mt-[3.3rem] mb-[3.7rem] fill-lime duration-200 group-hover:fill-blackish group-hover:w-[180px]"
+			className="w-[64px] lg:w-[132px] lg:mt-[3.3rem] lg:mb-[3.7rem] fill-lime duration-200 group-hover:fill-blackish group-hover:w-[84px] lg:group-hover:w-[180px]"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 222.973 251.479">
 			<g transform="translate(-1166.223 -5641.165)">

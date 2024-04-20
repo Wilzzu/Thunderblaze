@@ -104,7 +104,7 @@ const DemoMode = () => {
 						exit={{ y: 44, opacity: 0 }}
 						transition={{ opacity: { duration: 0.14 }, y: { duration: 0.2 } }}
 						onClick={() => setShowToast(false)}
-						className="absolute z-0 bottom-40 bg-gradient-to-br from-blue-500 to-blue-700 text-center flex items-center justify-center p-3 lg:p-4 rounded-lg shadow-lg">
+						className="absolute z-0 bottom-36 lg:bottom-40 bg-gradient-to-br from-blue-500 to-blue-700 text-center flex items-center justify-center p-3 lg:p-4 rounded-lg shadow-lg">
 						<p className="lg:text-sm">
 							{demoUser?.demo?.type ? (
 								<>

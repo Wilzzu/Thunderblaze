@@ -3,7 +3,7 @@ import footerImg from "../../assets/logo-256.png";
 
 const MobileFooter = (props) => {
 	return (
-		<div className="md:hidden flex flex-col items-center justify-center gap-10 bg-whiteish font-poppins">
+		<div className="md:hidden flex flex-col items-center justify-center gap-10 bg-whiteish font-poppins pb-6">
 			{/* MENU */}
 			<img src={footerImg} className="max-w-[120px] w-1/2 pt-10" alt="" />
 			{/* Items */}
