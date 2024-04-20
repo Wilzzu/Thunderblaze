@@ -42,7 +42,7 @@ const Timeouts = () => {
 	if (isLoading) {
 		return (
 			<div className="centerDiv flex min-h-[900px] max-w-[1280px] justify-center gap-24 bg-whiteish py-16">
-				<div className="flex w-full flex-col gap-10">
+				<div className="flex w-full flex-col gap-4 lg:gap-10">
 					<StatsSubNavigation selected="timeouts" />
 					<div className="flex h-[24.5rem] w-full animate-pulse flex-col items-center justify-center gap-5 rounded-2xl bg-whiteishDark py-12 font-poppins font-bold">
 						<h1 className="font-placeholder text-5xl text-whiteishDarker">TOP 3 TIMEOUTS</h1>
@@ -64,7 +64,7 @@ const Timeouts = () => {
 	if (isError) {
 		return (
 			<div className="centerDiv flex min-h-[900px] max-w-[1280px] justify-center gap-24 bg-whiteish py-16">
-				<div className="flex w-full flex-col gap-10">
+				<div className="flex w-full flex-col gap-4 lg:gap-10">
 					<StatsSubNavigation selected="timeouts" />
 					<div className="flex justify-center font-hanken text-black">
 						<div className="py-2 px-5 border-4 border-red-600 rounded-xl">
@@ -78,17 +78,17 @@ const Timeouts = () => {
 
 	return (
 		<div className="centerDiv flex min-h-[900px] max-w-[1280px] justify-center gap-24 bg-whiteish py-16">
-			<div className="flex w-full flex-col gap-10">
+			<div className="flex w-full flex-col gap-4 lg:gap-10">
 				<StatsSubNavigation selected="timeouts" />
 				{timeouts.length > 0 && (
 					<div>
 						{/* Top 3 */}
 						<div className="flex w-full items-center justify-center rounded-t-2xl bg-whiteishDark pt-12">
-							<h1 className="mb-4 w-1/2 text-center font-poppins text-2xl font-bold text-blackishLight">
+							<h1 className="mb-4 lg:w-1/2 text-center font-poppins text-2xl font-bold text-blackishLight">
 								TOP 3 TIMEOUTS:
 							</h1>
 						</div>
-						<div className="mb-10 flex flex-col items-center gap-5 rounded-b-2xl bg-whiteishDark pb-12 font-poppins font-bold">
+						<div className="mb-10 flex flex-col items-center gap-5 rounded-b-2xl bg-whiteishDark pb-12 px-2 font-poppins font-bold">
 							{/* Top 3 Cards */}
 							{timeouts.map((e, i) => {
 								return i <= 2 && <PodiumItem key={e.id} user={e} pos={i} value={"timeouts"} />;
@@ -101,8 +101,8 @@ const Timeouts = () => {
 								Timeout standings:
 							</motion.h1>
 							<div className="flex flex-col items-center justify-center font-hanken">
-								<div className="mt-4 flex w-1/2 items-center justify-between px-4 font-poppins text-sm opacity-30">
-									<div className="flex gap-7">
+								<div className="mt-4 flex w-full lg:w-1/2 items-center justify-between px-4 font-poppins text-sm opacity-30">
+									<div className="flex gap-5 lg:gap-7">
 										<h1>#</h1>
 										<h1>User</h1>
 									</div>
@@ -112,16 +112,16 @@ const Timeouts = () => {
 									return (
 										<div
 											key={e.id}
-											className={`flex h-16 w-1/2 items-center justify-between px-4 pt-1
+											className={`flex h-16 w-full lg:w-1/2 items-center justify-between px-4 pt-1
 										${i !== 0 && "border-t-2"}`}>
 											{/* User information */}
 											<motion.div
 												viewport={{ once: true, amount: 1 }}
 												whileInView={{ x: 0, opacity: 1 }}
-												initial={{ x: -100, opacity: 0 }}
+												initial={{ x: -16, opacity: 0 }}
 												transition={{ type: "spring", stiffness: 50 }}
 												className="flex items-center gap-2 font-medium">
-												<h1 className="mr-5 w-3">{i + 1}.</h1>
+												<h1 className="mr-3 lg:mr-5 w-3">{i + 1}.</h1>
 												<img
 													src={e.avatar}
 													alt={e.name + "'S AVATAR"}
@@ -133,7 +133,7 @@ const Timeouts = () => {
 											<motion.h1
 												viewport={{ once: true, amount: 1 }}
 												whileInView={{ x: 0, opacity: 1 }}
-												initial={{ x: 100, opacity: 0 }}
+												initial={{ x: 16, opacity: 0 }}
 												transition={{ type: "spring", stiffness: 50 }}
 												className="font-bold text-blackishLight">
 												{e.timeouts}

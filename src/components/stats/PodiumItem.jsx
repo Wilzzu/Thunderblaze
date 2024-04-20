@@ -8,14 +8,14 @@ const styles = [
 
 const numStyles = {
 	timeouts: [
-		"w-60 right-[-190px] text-8xl text-[#fff8e4] shadow-goldXD",
-		"w-60 right-[-210px] top-[0.20rem] text-6xl text-[#f3f3f3] shadow-[#C0C0C0]",
-		"w-28 right-[-90px] text-4xl text-[#fff9ed] shadow-[#b4915b]",
+		"w-60 right-[-164px] lg:right-[-190px] text-6xl lg:text-8xl text-[#fff8e4] shadow-goldXD",
+		"w-60 right-[-175px] lg:right-[-210px] lg:top-[0.20rem] text-4xl lg:text-6xl text-[#f3f3f3] shadow-[#C0C0C0]",
+		"w-28 right-[-54px] lg:right-[-90px] text-2xl lg:text-4xl text-[#fff9ed] shadow-[#b4915b]",
 	],
 	messages: [
-		"w-60 right-[-70px] text-8xl text-[#fff8e4] shadow-goldXD",
-		"w-60 right-[-110px] top-[0.20rem] text-6xl text-[#f3f3f3] shadow-[#C0C0C0]",
-		"w-28 right-[-40px] text-4xl text-[#fff9ed] shadow-[#b4915b]",
+		"w-60 right-[-128px] lg:right-[-70px] text-4xl lg:text-8xl text-[#fff8e4] shadow-goldXD",
+		"w-60 right-[-134px] lg:right-[-110px] lg:top-[0.20rem] text-3xl lg:text-6xl text-[#f3f3f3] shadow-[#C0C0C0]",
+		"w-28 right-[-17px] lg:right-[-40px] text-2xl lg:text-4xl text-[#fff9ed] shadow-[#b4915b]",
 	],
 };
 
@@ -37,30 +37,45 @@ const PodiumItem = (props) => {
 				delay: transition[props.pos].del,
 			}}
 			className={
-				"relative flex items-center w-1/2 justify-center bg-gradient-to-t " + styles[props.pos]
+				"relative flex items-center w-full lg:w-1/2 justify-center bg-gradient-to-t " +
+				styles[props.pos]
 			}>
 			{/* User information */}
-			<div className="flex w-full items-center justify-center gap-3 text-whiteish">
+			<div className="flex w-full items-center lg:justify-center px-5 gap-3 text-whiteish">
 				{/* Image */}
 				<img
 					src={props.user.avatar}
 					alt={props.user.name + "'S AVATAR"}
 					className={
-						"rounded-full " + (props.pos === 0 ? "h-14" : props.pos === 1 ? "h-10" : "h-8")
+						"rounded-full " +
+						(props.pos === 0 ? "h-12 lg:h-14" : props.pos === 1 ? "h-9 lg:h-10" : "h-7 lg:h-8")
 					}
 				/>
 				{/* Name */}
-				<h1
-					className={
-						"truncate text-shadow-normal " +
-						(props.pos === 0
-							? "text-3xl shadow-[#807e7652]"
-							: props.pos === 1
-							? "text-xl shadow-[#46464652]"
-							: "text-lg shadow-[#5e5b5352]")
-					}>
-					{props.user.name}
-				</h1>
+				<div>
+					<h1
+						className={
+							"truncate text-shadow-normal " +
+							(props.pos === 0
+								? "text-2xl lg:text-3xl shadow-[#807e7652]"
+								: props.pos === 1
+								? "text-lg lg:text-xl shadow-[#46464652]"
+								: "text-base lg:text-lg shadow-[#5e5b5352]")
+						}>
+						{props.user.name}
+					</h1>
+					{/* <p
+						className={
+							"block lg:hidden font-semibold font-hanken text-shadow-normal " +
+							(props.pos === 0
+								? "text-lg shadow-[#807e7652]"
+								: props.pos === 1
+								? "text-base shadow-[#46464652]"
+								: "text-sm shadow-[#5e5b5352]")
+						}>
+						{props.user[props.value] + " " + props.value}
+					</p> */}
+				</div>
 			</div>
 			{/* Amount */}
 			<motion.h1

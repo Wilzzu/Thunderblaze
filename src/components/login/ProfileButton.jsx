@@ -27,8 +27,8 @@ const ProfileButton = (props) => {
 			className="flex h-11 max-w-[16rem] items-center justify-end gap-2 duration-150 transition-transform hover:scale-[1.02]">
 			<h1
 				className={
-					"lg:line-clamp-1 font-hanken text-lg font-semibold " +
-					(props.textEnable ? "line-clamp-1 text-xl" : "hidden")
+					"lg:line-clamp-1 font-hanken text-base lg:text-lg font-semibold " +
+					(props.textEnable ? "line-clamp-1 text-lg lg:text-xl" : "hidden")
 				}>
 				{props.discord?.name.split("#")[0]}
 			</h1>

@@ -72,20 +72,21 @@ const MobileNav = (props) => {
 							className="absolute right-0 top-0 h-dvh w-3/5 bg-whiteish z-20 rounded-l-2xl drop-shadow-2xl">
 							{/* Close button */}
 							<div className="h-20 px-5 items-center flex">
-								<img src={logo} className="w-10 opacity-50" alt="" />
+								<img src={logo} className="w-10 opacity-50" alt="Thunderblaze logo" />
 							</div>
 							{/* Login button */}
 							<div className="h-24 border-y-2 flex items-center justify-center">
-								<motion.div variants={login}>
+								<motion.div variants={login} className="px-1">
 									{props.isLoading ? (
 										<div className="h-11 w-[7.6rem] animate-pulseLight rounded-xl bg-blackishLight opacity-30" />
 									) : (
 										<>
-											{props.user && Object.keys(props.user).length ? (
+											{props.user && Object.keys(props.user).length && props.user?.id ? (
 												<ProfileButton
 													discord={props.user.discord}
 													textEnable={true}
 													rounded={true}
+													demo={props?.user?.demo}
 												/>
 											) : (
 												<LoginButton
