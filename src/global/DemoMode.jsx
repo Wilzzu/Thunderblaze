@@ -30,7 +30,7 @@ const DemoMode = () => {
 		<div className="fixed -bottom-0 z-50 w-full text-white font-poppins text-xs lg:text-base flex justify-center">
 			<div
 				className={cn(
-					"absolute group flex flex-col items-center -bottom-[6.6rem] lg:-bottom-[7.7rem] duration-300 z-10",
+					"absolute group flex flex-col items-center -bottom-[5.6rem] lg:-bottom-[7.7rem] duration-300 z-10",
 					open ? "bottom-0 lg:bottom-0" : "lg:hover:-bottom-[6.8rem]"
 				)}>
 				<button
@@ -104,7 +104,7 @@ const DemoMode = () => {
 						exit={{ y: 44, opacity: 0 }}
 						transition={{ opacity: { duration: 0.14 }, y: { duration: 0.2 } }}
 						onClick={() => setShowToast(false)}
-						className="absolute z-0 bottom-36 lg:bottom-40 bg-gradient-to-br from-blue-500 to-blue-700 text-center flex items-center justify-center p-3 lg:p-4 rounded-lg shadow-lg">
+						className="absolute z-0 bottom-32 lg:bottom-40 bg-gradient-to-br from-blue-500 to-blue-700 text-center flex items-center justify-center p-3 lg:p-4 rounded-lg shadow-lg">
 						<p className="lg:text-sm">
 							{demoUser?.demo?.type ? (
 								<>

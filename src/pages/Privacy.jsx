@@ -106,6 +106,33 @@ const Privacy = () => {
 				personal information, please contact us so that we will be able to do necessary actions.
 			</p>
 
+			<h2>Your Rights under GDPR</h2>
+			<p>
+				You have the right to access, update, or delete your personal data. If you wish to exercise
+				these rights, you can:
+			</p>
+			<ul>
+				<li>
+					Submit a request through our{" "}
+					<a
+						href="https://forms.gle/eL8qXBJ3CMxreBpb6"
+						target="_blank"
+						rel="noreferrer"
+						className="underline underline-offset-2 decoration-lime decoration-2">
+						GDPR Data Request Form
+					</a>
+					.
+				</li>
+				<li>
+					Contact us at:{" "}
+					<a
+						href="mailto:wilzzudev@gmail.com"
+						className="underline underline-offset-2 decoration-lime decoration-2">
+						wilzzudev@gmail.com
+					</a>
+				</li>
+			</ul>
+
 			<h2>Changes to This Privacy Policy</h2>
 
 			<p>
@@ -119,7 +146,13 @@ const Privacy = () => {
 
 			<p>
 				If you have any questions or suggestions about our Privacy Policy, do not hesitate to
-				contact us at wilzzudev@gmail.com.
+				contact us at{" "}
+				<a
+					href="mailto:wilzzudev@gmail.com"
+					className="underline underline-offset-2 decoration-lime decoration-2">
+					wilzzudev@gmail.com
+				</a>
+				.
 			</p>
 		</div>
 	);
