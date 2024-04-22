@@ -9,7 +9,7 @@ const useGetUser = (id) => {
 		isError: userIsError,
 	} = useQuery(["userInfo", id], () => {
 		return axios
-			.get(`${settings.apiLocation}/discord/members`)
+			.get(`${settings.apiLocation}/api/discord/members`)
 			.then((res) => {
 				return res.data.find((members) => id === members.id);
 			})

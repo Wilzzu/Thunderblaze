@@ -10,8 +10,8 @@ const supabase = createClient(process.env.VITE_SUPAURL, process.env.VITE_SUPAAPI
 // @route   GET /api/steam/:id
 const getSteamLogin = asyncHandler(async (req, res) => {
 	const steam = new SteamAuth({
-		realm: settings.apiLocation, // Site name displayed to users on logon
-		returnUrl: settings.apiLocation + "/steam/authenticate/" + req.params.id, // Your return route
+		realm: process.env.VITE_WEBSITEADDRESS, // Site name displayed to users on logon
+		returnUrl: process.env.VITE_WEBSITEADDRESS + "api/steam/authenticate/" + req.params.id, // Your return route
 		apiKey: process.env.STEAMAPI, // Steam API key
 	});
 
@@ -23,8 +23,8 @@ const getSteamLogin = asyncHandler(async (req, res) => {
 // @route   GET /api/steam/authenticate/:id
 const getSteamAuthenticate = asyncHandler(async (req, res) => {
 	const steam = new SteamAuth({
-		realm: settings.apiLocation, // Site name displayed to users on logon
-		returnUrl: settings.apiLocation + "/steam/authenticate/" + req.params.id, // Your return route
+		realm: process.env.VITE_WEBSITEADDRESS, // Site name displayed to users on logon
+		returnUrl: process.env.VITE_WEBSITEADDRESS + "api/steam/authenticate/" + req.params.id, // Your return route
 		apiKey: process.env.STEAMAPI, // Steam API key
 	});
 

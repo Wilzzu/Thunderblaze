@@ -11,7 +11,7 @@ const FeedbackCard = (props) => {
 	// Fetch feedback senders latest info from discord
 	const getUser = () => {
 		if (props.feedback.demo) return setUser({ nickname: "Demo user", avatar: anonImg });
-		axios.get(`${settings.apiLocation}/discord/members`).then((res) => {
+		axios.get(`${settings.apiLocation}/api/discord/members`).then((res) => {
 			setUser(res.data.find((members) => props.feedback.id === members.id));
 		});
 	};

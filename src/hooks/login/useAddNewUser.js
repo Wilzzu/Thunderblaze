@@ -51,7 +51,7 @@ const useAddNewUser = () => {
 	// Fetch all group members
 	const fetchGroupMembers = async (user) => {
 		axios
-			.get(`${settings.apiLocation}/discord/members/refresh`)
+			.get(`${settings.apiLocation}/api/discord/members/refresh`)
 			.then((res) => addNewUserToDB(user, res.data))
 			.catch((err) => {
 				throwError("#DCW22", err);

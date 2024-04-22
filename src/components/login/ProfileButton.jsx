@@ -10,7 +10,7 @@ const ProfileButton = (props) => {
 		setAvatar(
 			await axios
 				.get(
-					`${settings.apiLocation}/discord/validateimg?id=${props.discord?.provider_id}&img=${props.discord?.picture}`
+					`${settings.apiLocation}/api/discord/validateimg?id=${props.discord?.provider_id}&img=${props.discord?.picture}`
 				)
 				.then((res) => res.data)
 		);

@@ -11,7 +11,7 @@ const useFeedback = () => {
 	const [allFeedbacks, setAllFeedbacks] = useState(null);
 
 	const getAllFeedbacks = async () => {
-		axios.get(`${settings.apiLocation}/feedback`).then((res) => {
+		axios.get(`${settings.apiLocation}/api/feedback`).then((res) => {
 			setAllFeedbacks(res.data);
 		});
 	};
@@ -40,7 +40,7 @@ const useFeedback = () => {
 			demo: user.demo ? true : false,
 		};
 		axios
-			.post(`${settings.apiLocation}/feedback`, data)
+			.post(`${settings.apiLocation}/api/feedback`, data)
 			.then((res) => {
 				console.log(res);
 				setFeedbackID(`ID: ${res.data._id}`);

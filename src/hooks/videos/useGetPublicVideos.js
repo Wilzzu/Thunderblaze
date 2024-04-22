@@ -10,7 +10,7 @@ const useGetPublicVideos = () => {
 	} = useQuery(
 		["publicVideos"],
 		async () => {
-			return axios.get(`${settings.apiLocation}/videos/public`).then((res) => {
+			return axios.get(`${settings.apiLocation}/api/videos/public`).then((res) => {
 				return res.data;
 			});
 		},

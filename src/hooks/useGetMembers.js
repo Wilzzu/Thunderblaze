@@ -13,7 +13,7 @@ const useGetMembers = (parameter = "", enabled = true) => {
 		["allMembers"],
 		() => {
 			return axios
-				.get(`${settings.apiLocation}/discord/members/${parameter}`)
+				.get(`${settings.apiLocation}/api/discord/members/${parameter}`)
 				.then((res) => res.data);
 		},
 		{ staleTime: Infinity, enabled: enabled }

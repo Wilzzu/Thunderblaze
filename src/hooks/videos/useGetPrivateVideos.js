@@ -15,7 +15,7 @@ const useGetPrivateVideos = (auth = null) => {
 		["privateVideos"],
 		async () => {
 			return axios
-				.get(`${settings.apiLocation}/videos/private`, {
+				.get(`${settings.apiLocation}/api/videos/private`, {
 					headers: { Authorization: `Bearer ${auth}` },
 				})
 				.then((res, err) => {

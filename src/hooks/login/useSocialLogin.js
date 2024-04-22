@@ -9,10 +9,10 @@ const useSocialLogin = (user, social) => {
 	// The API address for logging in should look like this for all: /api/SOCIAL/:id
 	// The API response should be a redirect to the login website
 	const login = async () => {
-		// await axios.get(`${settings.apiLocation}/${social}/${user.id}`).then((res) => {
+		// await axios.get(`${settings.apiLocation}/api/${social}/${user.id}`).then((res) => {
 		// 	window.location.replace(res.data);
 		// });
-		window.location.replace(`${settings.apiLocation}/${social}/${user.id}`);
+		window.location.replace(`${settings.apiLocation}/api/${social}/${user.id}`);
 	};
 
 	// Handle logout

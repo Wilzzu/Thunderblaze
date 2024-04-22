@@ -13,7 +13,7 @@ const Messages = () => {
 
 	// For getting most up to date info
 	// const getUserInfo = () => {
-	// 	axios.get(`${settings.apiLocation}/discord/members`).then((res) => {
+	// 	axios.get(`${settings.apiLocation}/api/discord/members`).then((res) => {
 	// 		data.forEach((member) => {
 	// 			let user = res.data.find((members) => member.id === members.id);
 	// 			if (user)

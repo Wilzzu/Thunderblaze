@@ -29,7 +29,7 @@ const getLogin = asyncHandler(async (req, res) => {
 			new URLSearchParams({
 				response_type: "code",
 				client_id: clientId,
-				redirect_uri: `${settings.apiLocation}/lichess/callback/${req.params.id}`,
+				redirect_uri: `${process.env.VITE_WEBSITEADDRESS}/api/lichess/callback/${req.params.id}`,
 				scope: "preference:read",
 				code_challenge_method: "S256",
 				code_challenge: challenge,

@@ -1,7 +1,6 @@
 {
-	"apiLocation": "/api",
-	"apiWeb": "https://thunderblaze.wilzzu.dev/api",
-	"apiLocal": "http://localhost:5000/api",
+	"apiLocation": "",
+	"apiLocal": "http://localhost:5000",
 	"moderators": [],
 	"dev": true
 }

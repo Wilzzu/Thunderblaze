@@ -4,7 +4,7 @@ import settings from "../../settings.json";
 
 const useGetMessages = () => {
 	const { data, isLoading, isError } = useQuery(["discordMessages"], async () => {
-		return axios.get(`${settings.apiLocation}/stats/discord/messages`).then((res) => {
+		return axios.get(`${settings.apiLocation}/api/stats/discord/messages`).then((res) => {
 			return res.data.sort((a, b) => b.messages - a.messages);
 		});
 	});

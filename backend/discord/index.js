@@ -66,7 +66,7 @@ const addToMsgCache = (author) => {
 function updateMessages() {
 	if (!messageCache.length) return;
 	axios
-		.post(`${settings.apiLocation}/stats/discord/messages`, { cache: messageCache })
+		.post(`${settings.apiLocation}/api/stats/discord/messages`, { cache: messageCache })
 		.then((res) => {
 			messageCache.length = 0;
 		})
@@ -119,7 +119,7 @@ client.on("messageCreate", async (message) => {
 			avatar: user.displayAvatarURL(),
 		};
 		axios
-			.post(`${settings.apiLocation}/stats/discord/timeouts/${msg[0]}`, data)
+			.post(`${settings.apiLocation}/api/stats/discord/timeouts/${msg[0]}`, data)
 			.then((res) => {
 				console.log("Added new timeout: " + msg[1]);
 			})
