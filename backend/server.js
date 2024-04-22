@@ -2,7 +2,7 @@ const express = require("express");
 const session = require("express-session");
 var cors = require("cors");
 const colors = require("colors");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 
 const connectDB = require("./config/db");
 
