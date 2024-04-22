@@ -94,7 +94,7 @@ const Feedback = () => {
 			{user?.id ? (
 				// If part of the group
 				user.discord.groupMember ? (
-					<div className="flex w-[1280px] flex-col items-center justify-center gap-10 py-40">
+					<div className="flex lg:w-[1280px] flex-col items-center justify-center gap-2 lg:gap-10 px-1 lg:px-0 py-32 lg:py-40">
 						{/* Feedback confirmation */}
 						{feedbackConfirmation && (
 							<motion.div
@@ -130,7 +130,7 @@ const Feedback = () => {
 										animate={{ y: 0, opacity: 0.9 }}
 										initial={{ y: 20, opacity: 0 }}
 										transition={{ delay: 1.2, duration: 1, type: "tween" }}
-										className="mb-4 font-poppins text-xl">
+										className="mb-4 font-poppins text-xl text-pretty lg:text-wrap">
 										<h1>Send feedback to the moderation team:</h1>
 									</motion.div>
 									{/* User information*/}
@@ -138,27 +138,29 @@ const Feedback = () => {
 										animate={{ y: 0, opacity: 1 }}
 										initial={{ y: -100, opacity: 0 }}
 										transition={{ duration: 1, type: "tween" }}
-										className="h-82 flex gap-4 rounded-xl bg-blackishLight p-6 font-hanken">
+										className="h-82 flex gap-2 lg:gap-4 rounded-xl bg-blackishLight p-4 lg:p-6 font-hanken max-w-[98dvw] lg:max-w-full overflow-hidden">
 										<div className="w-16">
 											<img
 												src={isAnon ? anonImg : user.discord.picture}
 												alt="User avatar"
-												className="w-16 rounded-full"
+												className="w-12 lg:w-16 rounded-full"
 											/>
 										</div>
-										<div className="h-full">
-											<div className="flex items-end gap-2 text-whiteish">
-												<h1 className="text-left text-xl font-medium">
+										<div className="h-full w-full overflow-hidden">
+											<div className="flex items-center lg:items-end gap-2 text-whiteish">
+												<h1 className="text-left text-lg lg:text-xl font-medium w-full lg:w-auto truncate overflow-hidden">
 													{isAnon ? "Anonymous" : user.discord.name.split("#")[0]}
 												</h1>
-												<p className="text-base font-thin opacity-70">Today at {currTime}</p>
+												<p className="hidden lg:block text-sm lg:text-base font-thin opacity-70">
+													Today at {currTime}
+												</p>
 											</div>
 											{/* Text field */}
 											<textarea
 												ref={inputRef}
 												onChange={(e) => handleTextareaChange(e)}
 												placeholder="Your feedback..."
-												className={`h-[100px] w-[500px] resize-none bg-blackishLight pr-6 text-lg outline-none placeholder:text-whiteish placeholder:opacity-50 ${
+												className={`h-[100px] w-full lg:w-[500px] resize-none bg-blackishLight lg:pr-6 lg:text-lg outline-none placeholder:text-whiteish placeholder:opacity-50 ${
 													charCount > 1000 ? "text-red-500" : "text-whiteish"
 												}`}
 											/>
@@ -215,7 +217,7 @@ const Feedback = () => {
 									<h1>Feedbacks</h1>
 									<p className="text-sm font-light">Only visible to moderators</p>
 								</div>
-								<div className="scrollNormal scrollRight scrollPadding flex max-h-[640px] w-1/2 flex-col items-start justify-start gap-2 overflow-auto rounded-3xl bg-blackishLight p-10 scrollbar scrollbar-thumb-lime scrollbar-thumb-rounded-full scrollbar-w-2">
+								<div className="scrollNormal scrollRight scrollPadding flex lg:max-h-[640px] max-w-[98dvw] lg:max-w-full overflow-hidden lg:w-1/2 flex-col items-start justify-start gap-2 lg:overflow-auto rounded-3xl bg-blackishLight p-2 lg:p-10 scrollbar scrollbar-thumb-lime scrollbar-thumb-rounded-full scrollbar-w-2">
 									{/* Example feedbacks for demo */}
 									<FeedbackCard
 										key={"example-1"}
