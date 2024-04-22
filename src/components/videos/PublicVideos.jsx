@@ -4,7 +4,7 @@ import VideoCard from "./VideoCard";
 import { motion } from "framer-motion";
 
 const PublicVideos = (props) => {
-	if (props.loading) return <p>Ladataan julkisia videoita...</p>;
+	if (props.loading) return <p>Loading public videos...</p>;
 
 	if (props.error)
 		return (

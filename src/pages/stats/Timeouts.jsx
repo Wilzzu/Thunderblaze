@@ -52,7 +52,7 @@ const Timeouts = () => {
 					</div>
 					<div className="h-full animate-pulse rounded-2xl bg-whiteishDark pt-10">
 						<div className="flex flex-col items-center justify-center gap-3 font-hanken text-lg">
-							<h1>Loading timeout statistics</h1>
+							<h1>Loading timeout statistics...</h1>
 							<LoadingDots color="black" />
 						</div>
 					</div>
