@@ -29,7 +29,7 @@ const getLogin = asyncHandler(async (req, res) => {
 			new URLSearchParams({
 				response_type: "code",
 				client_id: clientId,
-				redirect_uri: `${process.env.VITE_WEBSITEADDRESS}/api/lichess/callback/${req.params.id}`,
+				redirect_uri: `${process.env.VITE_WEBSITEADDRESS}api/lichess/callback/${req.params.id}`,
 				scope: "preference:read",
 				code_challenge_method: "S256",
 				code_challenge: challenge,
@@ -44,7 +44,7 @@ const getLichessToken = async (authCode, verifier, url, user_id) => {
 			"https://lichess.org/api/token",
 			JSON.stringify({
 				grant_type: "authorization_code",
-				redirect_uri: `${url}/lichess/callback/${user_id}`,
+				redirect_uri: `${url}api/lichess/callback/${user_id}`,
 				client_id: clientId,
 				code: authCode,
 				code_verifier: verifier,
@@ -75,7 +75,7 @@ const getCallback = asyncHandler(async (req, res) => {
 	const lichessToken = await getLichessToken(
 		req.query.code,
 		verifier,
-		settings.apiLocation,
+		process.env.VITE_WEBSITEADDRESS,
 		req.params.id
 	);
 
