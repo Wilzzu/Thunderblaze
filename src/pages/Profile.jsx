@@ -32,7 +32,7 @@ const Profile = () => {
 			) : user?.id ? (
 				<div className="flex h-full w-full">
 					{/* Left navigation bar */}
-					<Navigation logoutHandler={logoutHandler} />
+					<Navigation logoutHandler={logoutHandler} user={user} />
 					{/* User dashboard */}
 					<div className="flex w-full flex-col items-center justify-start gap-5 bg-blackish px-2 lg:px-0 lg:rounded-tl-bigger">
 						{/* User info card*/}

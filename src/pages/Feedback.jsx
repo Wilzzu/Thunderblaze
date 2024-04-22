@@ -268,7 +268,7 @@ const Feedback = () => {
 					</div>
 				) : (
 					// If not part of the group
-					<div className="mt-40 font-poppins flex flex-col gap-4 items-center">
+					<div className="mt-40 font-poppins flex flex-col gap-4 items-center px-10 lg:px-0">
 						<h1>This page is only for group members, sorry!</h1>
 						<Link
 							to="/"

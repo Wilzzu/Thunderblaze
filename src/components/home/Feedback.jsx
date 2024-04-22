@@ -17,7 +17,7 @@ const Feedback = () => {
 						opacity: isInView ? 1 : 0,
 						transition: "all 1.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
 					}}
-					className="absolute lg:relative lg:w-[38%] w-2/3 z-0">
+					className="absolute flex items-center justify-center h-full lg:h-auto lg:relative lg:w-[38%] w-2/3 z-0">
 					<img
 						ref={ref}
 						src={heroImg}
