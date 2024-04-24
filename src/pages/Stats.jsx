@@ -7,7 +7,7 @@ const Stats = () => {
 		navigate("./timeouts");
 	}, []);
 
-	return <div className="min-h-dvh">Loading...</div>;
+	return <div className="h-dvh">Loading...</div>;
 };
 
 export default Stats;

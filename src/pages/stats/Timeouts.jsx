@@ -41,7 +41,7 @@ const Timeouts = () => {
 
 	if (isLoading) {
 		return (
-			<div className="centerDiv flex min-h-[900px] max-w-[1280px] justify-center gap-24 bg-whiteish py-16">
+			<div className="centerDiv flex min-h-dvh max-w-[1280px] justify-center gap-24 bg-whiteish py-16">
 				<div className="flex w-full flex-col gap-4 lg:gap-10">
 					<StatsSubNavigation selected="timeouts" />
 					<div className="flex h-[24.5rem] w-full animate-pulse flex-col items-center justify-center gap-5 rounded-2xl bg-whiteishDark py-12 font-poppins font-bold">
@@ -63,7 +63,7 @@ const Timeouts = () => {
 
 	if (isError) {
 		return (
-			<div className="centerDiv flex min-h-[900px] max-w-[1280px] justify-center gap-24 bg-whiteish py-16">
+			<div className="centerDiv flex min-h-dvh max-w-[1280px] justify-center gap-24 bg-whiteish py-16">
 				<div className="flex w-full flex-col gap-4 lg:gap-10">
 					<StatsSubNavigation selected="timeouts" />
 					<div className="flex justify-center font-hanken text-black">
@@ -77,7 +77,7 @@ const Timeouts = () => {
 	}
 
 	return (
-		<div className="centerDiv flex min-h-[900px] max-w-[1280px] justify-center gap-24 bg-whiteish py-16">
+		<div className="centerDiv flex min-h-dvh max-w-[1280px] justify-center gap-24 bg-whiteish py-16">
 			<div className="flex w-full flex-col gap-4 lg:gap-10">
 				<StatsSubNavigation selected="timeouts" />
 				{timeouts.length > 0 && (
