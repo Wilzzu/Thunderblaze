@@ -71,7 +71,7 @@ function updateMessages() {
 			messageCache.length = 0;
 		})
 		.catch((error) => {
-			console.error("There was an error while updating messages!", error);
+			console.error("There was an error while updating messages!");
 		});
 }
 
