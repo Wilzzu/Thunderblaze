@@ -56,7 +56,7 @@ const Stats = () => {
 					</span>
 					<div className="w-2/3 max-w-72 aspect-square flex items-center justify-center">
 						<img
-							className="border-[6px] lg:border-8 border-white opacity-95 w-full h-full"
+							className="border-[6px] lg:border-8 border-white opacity-95 w-full h-full shadow-custom3"
 							src="cs-icon.svg"
 							alt="Play button icon"
 						/>
