@@ -7,8 +7,6 @@ import { motion } from "framer-motion";
 import LoadingDots from "../../assets/LoadingDots";
 
 const PrivateVideos = (props) => {
-	console.log(props.user);
-
 	if (Object.keys(props.user).length > 0 && props.user?.id == null) {
 		return (
 			<motion.div
@@ -57,7 +55,7 @@ const PrivateVideos = (props) => {
 	if (props.error) {
 		return (
 			<div className="flex justify-center font-hanken text-white">
-				<div className="py-2 px-5 border-4 border-red-600 rounded-xl">
+				<div className="py-2 px-5 border-4 border-red-600 rounded-xl animate-fadeInDelay">
 					<p className="text-xl">An error occurred while trying to fetch private videos.</p>
 				</div>
 			</div>

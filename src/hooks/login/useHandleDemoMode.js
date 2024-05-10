@@ -27,6 +27,7 @@ const useHandleDemoMode = () => {
 	const queryClient = useQueryClient();
 
 	const handleDemoMode = (type) => {
+		queryClient.invalidateQueries({ queryKey: "privateVideos", refetchType: "none" });
 		let user = demoUserObject;
 		switch (type) {
 			case "non-member":
@@ -58,7 +59,6 @@ const useHandleDemoMode = () => {
 				user = null;
 				break;
 		}
-		queryClient.invalidateQueries("privateVideos");
 		console.log("Setting demo user", user);
 		setDemoUser(user);
 		dispatch(addDemoUser(user));

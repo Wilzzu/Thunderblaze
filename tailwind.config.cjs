@@ -49,6 +49,11 @@ module.exports = {
 					"0%": { opacity: "0.8" },
 					"100%": { opacity: "1.0" },
 				},
+				fadeInDelay: {
+					"0%": { opacity: "0" },
+					"50%": { opacity: "0" },
+					"100%": { opacity: "1.0" },
+				},
 				pulseLight: {
 					"0%": { opacity: "0.35" },
 					"50%": { opacity: "0.20" },
@@ -92,6 +97,7 @@ module.exports = {
 				shootUpBounce: "shootUpBounce 0.45s cubic-bezier(.37,.46,.36,.99)",
 				shootDown: "shootDown 0.25s linear",
 				fadeIn: "fadeIn 0.25s linear",
+				fadeInDelay: "fadeInDelay 1s linear",
 				pulseLight: "pulseLight 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;",
 				float: "float 8s ease-in-out infinite",
 				float2: "float 8s ease-in-out infinite",
