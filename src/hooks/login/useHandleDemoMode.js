@@ -2,6 +2,7 @@ import { useState } from "react";
 import anonImg from "../../assets/anonImg.jpg";
 import { useDispatch } from "react-redux";
 import { addDemoUser } from "../../store";
+import { useQueryClient } from "@tanstack/react-query";
 
 const demoUserObject = {
 	id: `Demo#1234`,
@@ -23,6 +24,7 @@ const demoUserObject = {
 const useHandleDemoMode = () => {
 	const [demoUser, setDemoUser] = useState(null);
 	const dispatch = useDispatch();
+	const queryClient = useQueryClient();
 
 	const handleDemoMode = (type) => {
 		let user = demoUserObject;
@@ -56,6 +58,7 @@ const useHandleDemoMode = () => {
 				user = null;
 				break;
 		}
+		queryClient.invalidateQueries("privateVideos");
 		console.log("Setting demo user", user);
 		setDemoUser(user);
 		dispatch(addDemoUser(user));
