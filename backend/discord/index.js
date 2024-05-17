@@ -8,7 +8,7 @@ const {
 require("dotenv").config();
 const colors = require("colors");
 const axios = require("axios");
-const token = process.env.VITE_DCTOKEN;
+const token = process.env.DISCORD_TOKEN;
 const settings = require("../../src/settings.json");
 
 const client = new Client({
@@ -30,14 +30,14 @@ client.once(Events.ClientReady, async (e) => {
 
 // Global values
 let membersData = null;
-let refreshRate = 86400000; //1 day: 86400000, 10 sec: 10000
+let refreshRate = 86400000; //1 day: 86400000
 let lastUpdate = 0;
 
 // Commands for Discord bot
 const websiteCmd = ["!website", "!homepage", "!www"];
-const statsCmd = ["!stats", "!statsit", "!statistics"];
-const videosCmd = ["!videot", "!video", "!videos", "!leffat", "!leffa"];
-const feedbackCmd = ["!palaute", "!feedback"];
+const statsCmd = ["!stats", "!statistics"];
+const videosCmd = ["!video", "!videos"];
+const feedbackCmd = ["!feedback"];
 
 // Add button that redirects to the correct website
 const addBtn = (label, url, emoji) => {
@@ -103,30 +103,6 @@ client.on("messageCreate", async (message) => {
 		message.reply({
 			components: [addBtn("Thunderblaze videos", "https://thunderblaze.wilzzu.dev/videos", "📺")],
 		});
-
-	// Timeout DB
-	if (
-		message.channelId === "1077428918941917294" &&
-		message.content.includes("|") &&
-		!settings.dev
-	) {
-		let msg = message.content.split("|");
-		let guild = client.guilds.cache.get("582575029800402974");
-		let user = await guild.members.fetch(msg[0]);
-		const data = {
-			id: msg[0],
-			name: msg[1],
-			avatar: user.displayAvatarURL(),
-		};
-		axios
-			.post(`${settings.apiLocation}/api/stats/discord/timeouts/${msg[0]}`, data)
-			.then((res) => {
-				console.log("Added new timeout: " + msg[1]);
-			})
-			.catch((error) => {
-				console.error("There was an error while creating timeout!", error);
-			});
-	}
 });
 
 // Get members and voice channel members
@@ -139,7 +115,7 @@ const dcGetMembers = async (force = false) => {
 
 	// Else check for fetch new data
 	let members = await client.guilds.cache
-		?.find((g) => g.id === process.env.DCGUILDID)
+		?.find((g) => g.id === process.env.DISCORD_GUILD_ID)
 		?.members?.fetch();
 
 	try {
@@ -166,7 +142,7 @@ const dcGetMembers = async (force = false) => {
 // Get voice members
 const dcGetVoiceMembers = async () => {
 	let channels = await client.guilds.cache
-		?.find((g) => g.id === process.env.DCGUILDID)
+		?.find((g) => g.id === process.env.DISCORD_GUILD_ID)
 		.channels?.fetch();
 
 	try {

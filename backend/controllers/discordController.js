@@ -80,7 +80,7 @@ const getValidatedImg = asyncHandler(async (req, res) => {
 const getUserAvatar = async (id) => {
 	return await axios
 		.get(`https://discord.com/api/v9/users/${id}`, {
-			headers: { Authorization: `Bot ${process.env.VITE_DCTOKEN}` },
+			headers: { Authorization: `Bot ${process.env.DISCORD_TOKEN}` },
 		})
 		.then(async (res, err) => {
 			if (res) {

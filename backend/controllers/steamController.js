@@ -12,7 +12,7 @@ const getSteamLogin = asyncHandler(async (req, res) => {
 	const steam = new SteamAuth({
 		realm: process.env.VITE_WEBSITEADDRESS, // Site name displayed to users on logon
 		returnUrl: process.env.VITE_WEBSITEADDRESS + "api/steam/authenticate/" + req.params.id, // Your return route
-		apiKey: process.env.STEAMAPI, // Steam API key
+		apiKey: process.env.STEAM_API_KEY, // Steam API key
 	});
 
 	const redirectUrl = await steam.getRedirectUrl();
@@ -25,7 +25,7 @@ const getSteamAuthenticate = asyncHandler(async (req, res) => {
 	const steam = new SteamAuth({
 		realm: process.env.VITE_WEBSITEADDRESS, // Site name displayed to users on logon
 		returnUrl: process.env.VITE_WEBSITEADDRESS + "api/steam/authenticate/" + req.params.id, // Your return route
-		apiKey: process.env.STEAMAPI, // Steam API key
+		apiKey: process.env.STEAM_API_KEY, // Steam API key
 	});
 
 	try {
