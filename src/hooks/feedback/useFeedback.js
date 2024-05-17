@@ -42,7 +42,6 @@ const useFeedback = () => {
 		axios
 			.post(`${settings.apiLocation}/api/feedback`, data)
 			.then((res) => {
-				console.log(res);
 				setFeedbackID(`ID: ${res.data._id}`);
 				setFeedbackSent(true);
 				updateUserLastFeedback(user);

@@ -39,8 +39,6 @@ const getValidatedImg = asyncHandler(async (req, res) => {
 				// If user is not in the group
 				if (!user) {
 					userAvatar = await getUserAvatar(req.query.id);
-
-					console.log(`Added new image for: ${req.query.id}`);
 					// Update supabase user with new img
 					const { error } = await supabase
 						.from("users")
@@ -57,7 +55,6 @@ const getValidatedImg = asyncHandler(async (req, res) => {
 
 					if (!regex.test(req.query.img)) return;
 					if (imgId !== req.query.id) return;
-					console.log(`Added new image for group member: ${user.id}`);
 
 					// Update supabase user with new img
 					const { error } = await supabase

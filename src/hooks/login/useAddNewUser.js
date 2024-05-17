@@ -40,7 +40,6 @@ const useAddNewUser = () => {
 			throwError("#DCW1122", error);
 		}
 		if (data.length) {
-			console.log("User already in DB");
 			navigate(getCookie());
 			setIsLoading(false);
 		} else {

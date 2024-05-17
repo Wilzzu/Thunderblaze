@@ -6,7 +6,6 @@ const FeedbackButton = (props) => {
 	const [showBtnText, setShowBtnText] = useState(false);
 	const [disableBtn, setDisableBtn] = useState(false);
 	const [timeLeft, setTimeLeft] = useState(null);
-	console.log(props.user);
 	const timeLimit = 3600000;
 	// const timeLimit = 3600000;
 
@@ -27,7 +26,6 @@ const FeedbackButton = (props) => {
 				)}`
 			);
 		else if (props.charCount > 1000) {
-			console.log(props.charCount);
 			setButtonText("Feedback couldn't be sent because it has over 1000 characters.");
 		} else if (props.charCount < 15) setButtonText("Feedback is too short.");
 		// Send feedback if everything is correct

@@ -60,10 +60,7 @@ const Navbar = () => {
 
 	useEffect(() => {
 		if (demoUser && Object.keys(demoUser)?.length) getUserLogin(demoUser, true);
-		else {
-			console.log(loggedUser);
-			getUserLogin(loggedUser, false);
-		}
+		else getUserLogin(loggedUser, false);
 	}, [loggedUser, demoUser]);
 
 	return (

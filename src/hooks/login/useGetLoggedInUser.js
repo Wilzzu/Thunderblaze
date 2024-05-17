@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import { useSupabase } from "./useSupabase";
 
 // When manually wanting to get the user do this
@@ -23,10 +22,7 @@ const useGetLoggedInUser = () => {
 					return { id: null };
 				}
 			});
-		} else {
-			console.log("Returned from store");
-			return loggedUser;
-		}
+		} else return loggedUser;
 	};
 
 	return { getUser };

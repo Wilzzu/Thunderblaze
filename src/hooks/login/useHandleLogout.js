@@ -12,7 +12,6 @@ const useHandleLogout = () => {
 		// When user logs out clear user info and transfer them back to main page
 		supabase.auth.onAuthStateChange(async (event) => {
 			if (event == "SIGNED_OUT") {
-				console.log("logged out");
 				dispatch(removeUserInfo());
 				navigate("/");
 				location.reload();

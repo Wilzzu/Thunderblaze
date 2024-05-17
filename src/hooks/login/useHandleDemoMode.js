@@ -59,7 +59,6 @@ const useHandleDemoMode = () => {
 				user = null;
 				break;
 		}
-		console.log("Setting demo user", user);
 		setDemoUser(user);
 		dispatch(addDemoUser(user));
 	};
