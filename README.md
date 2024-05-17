@@ -1,6 +1,7 @@
-<h1 align="center">Thunderblaze</h1>
+![Banner](https://i.imgur.com/fwfJ0KU.png)
 
-<p align="center">A website built for a private Discord server, featuring access to private YouTube videos, member statistics, feedback submission, and more.</p>
+<h1 align="center">Thunderblaze</h1>
+<p align="center">React website built for a private Discord server, featuring Discord authentication, access to private YouTube videos, member statistics, feedback submission, and more.</p>
 
 ## Demo Site
 
@@ -10,11 +11,11 @@ This is a demo version of the website, where users can override their user sessi
 
 ## Features
 
-- **Home Page**: General information about the Discord server and more information about other features in the website.
-- **Videos Page**: Shows server's public YouTube videos. Logged-in members of the Discord server can watch private videos.
+- **Home Page**: General information about the Discord server and mentions of the website's features.
+- **Videos Page**: Shows server's YouTube videos. Logged-in members of the Discord server can watch private videos.
 - **Statistics Page**: Provides group members statistics. Displays the top 3 members in a podium format.
 - **Feedback Page**: Allows members to send feedback to the moderation team. Only moderators can view the feedback messages.
-- **Profile Page**: Shows logged-in user information and users can link their social accounts here.
+- **Profile Page**: Shows logged-in user's information and allows them to link their social accounts.
 
 ## Technologies Used
 
