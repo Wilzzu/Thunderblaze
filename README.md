@@ -69,7 +69,8 @@ This is a demo version of the website, where users can override their user sessi
     ```
 
 5.  **(Optional): Integrate with [botBob](https://github.com/Wilzzu/botBob)**
-    To enable timeout amount tracking, you can integrate the website with [botBob](https://github.com/Wilzzu/botBob), a public Discord bot I've developed. This bot allows users to be timed out via a voting system and records these timeouts in a database. Ensure [botBob](https://github.com/Wilzzu/botBob) is set up and connected to the same MongoDB database used for this project. Follow the setup instructions provided in the [repository for botBob](https://github.com/Wilzzu/botBob).
+
+      To enable timeout tracking, you can integrate the website with [botBob](https://github.com/Wilzzu/botBob), a public Discord bot I've developed. This bot allows users to be timed out via a voting system and then record these timeouts in a database. Make sure [botBob](https://github.com/Wilzzu/botBob) is set up and connected to the same MongoDB database used for this project. Follow the setup instructions provided in the [repository for botBob](https://github.com/Wilzzu/botBob).
 
 ## Discord Bot Commands
 
