@@ -24,7 +24,7 @@ const TiltVideoCard = (props) => {
 				transitionSpeed={500}
 				transitionEasing={"cubic-bezier(.13,.68,.49,.99)"}
 				scale={1.12}
-				gyroscope={true}
+				gyroscope={false}
 				onEnter={onEnter}
 				onLeave={onLeave}
 				className={
