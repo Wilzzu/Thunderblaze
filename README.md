@@ -9,6 +9,8 @@ This is a demo version of the website, where users can override their user sessi
 
 [Thunderblaze.wilzzu.dev](https://thunderblaze.wilzzu.dev/)
 
+![Screenshots](https://i.imgur.com/jnOYRJw.png)
+
 ## Features
 
 - **Home Page**: General information about the Discord server and mentions of the website's features.
@@ -42,35 +44,35 @@ This is a demo version of the website, where users can override their user sessi
 3. **Configure environment variables:**
    Rename the `.env.example` file to `.env` and fill in the values:
 
-| Variable              | Description                                                                                           |
-| --------------------- | ----------------------------------------------------------------------------------------------------- |
-| `PORT`                | The port where the backend server will run, e.g., `3000`.                                             |
-| `MONGOUSER`           | MongoDB database username found in `Database Access` section of your project.                         |
-| `MONGOPASS`           | MongoDB database password found in `Database Access` section of your project.                         |
-| `DISCORD_TOKEN`       | Bot token found in `Bot` > `Token` in your Discord Developer Portal application.                      |
-| `DISCORD_GUILD_ID`    | The ID of your Discord server.                                                                        |
-| `YTAPI`               | Youtube API key found in `APIs & Services` > `Credentials` in Google Cloud Console.                   |
-| `YTCHANNELID`         | The ID of your YouTube channel playlist. (Channel ID with `UC` replaced with `UU`)                    |
-| `YTPRIVATEID`         | The ID of your private YouTube playlist.                                                              |
-| `STEAM_API_KEY`       | Steam API key found in [https://steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey) |
-| `VITE_SUPAAPI`        | Anon key found in `Project Settings` > `API` > `Project API keys` in your Supabase project.           |
-| `VITE_SUPAURL`        | URL found in `Project Settings` > `API` > `Project URL` in your Supabase project.                     |
-| `VITE_WEBSITEADDRESS` | The URL where your frontend is hosted, e.g., `https://thunderblaze.wilzzu.dev/`.                      |
-| `SESSION_SECRET`      | A random string used to sign sessions.                                                                |
+   | Variable              | Description                                                                                           |
+   | --------------------- | ----------------------------------------------------------------------------------------------------- |
+   | `PORT`                | The port where the backend server will run, e.g., `3000`.                                             |
+   | `MONGOUSER`           | MongoDB database username found in `Database Access` section of your project.                         |
+   | `MONGOPASS`           | MongoDB database password found in `Database Access` section of your project.                         |
+   | `DISCORD_TOKEN`       | Bot token found in `Bot` > `Token` in your Discord Developer Portal application.                      |
+   | `DISCORD_GUILD_ID`    | The ID of your Discord server.                                                                        |
+   | `YTAPI`               | Youtube API key found in `APIs & Services` > `Credentials` in Google Cloud Console.                   |
+   | `YTCHANNELID`         | The ID of your YouTube channel playlist. (Channel ID with `UC` replaced with `UU`)                    |
+   | `YTPRIVATEID`         | The ID of your private YouTube playlist.                                                              |
+   | `STEAM_API_KEY`       | Steam API key found in [https://steamcommunity.com/dev/apikey](https://steamcommunity.com/dev/apikey) |
+   | `VITE_SUPAAPI`        | Anon key found in `Project Settings` > `API` > `Project API keys` in your Supabase project.           |
+   | `VITE_SUPAURL`        | URL found in `Project Settings` > `API` > `Project URL` in your Supabase project.                     |
+   | `VITE_WEBSITEADDRESS` | The URL where your frontend is hosted, e.g., `https://thunderblaze.wilzzu.dev/ `.                     |
+   | `SESSION_SECRET`      | A random string used to sign sessions.                                                                |
 
-4.  **Run the application:**
+4. **Run the application:**
 
-    ```
-    # Start the backend server and Discord bot
-    npm run server
+   ```
+   # Start the backend server and Discord bot
+   npm run server
 
-    # Start the frontend development server
-    npm run dev
-    ```
+   # Start the frontend development server
+   npm run dev
+   ```
 
-5.  **(Optional): Integrate with [botBob](https://github.com/Wilzzu/botBob)**
+5. **(Optional): Integrate with [botBob](https://github.com/Wilzzu/botBob)**
 
-      To enable timeout tracking, you can integrate the website with [botBob](https://github.com/Wilzzu/botBob), a public Discord bot I've developed. This bot allows users to be timed out via a voting system and then record these timeouts in a database. Make sure [botBob](https://github.com/Wilzzu/botBob) is set up and connected to the same MongoDB database used for this project. Follow the setup instructions provided in the [repository for botBob](https://github.com/Wilzzu/botBob).
+   To enable timeout tracking, you can integrate the website with [botBob](https://github.com/Wilzzu/botBob), a public Discord bot I've developed. This bot allows users to be timed out via a voting system and then record these timeouts in a database. Make sure [botBob](https://github.com/Wilzzu/botBob) is set up and connected to the same MongoDB database used for this project. Follow the setup instructions provided in the [repository for botBob](https://github.com/Wilzzu/botBob).
 
 ## Discord Bot Commands
 
