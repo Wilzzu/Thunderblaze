@@ -47,8 +47,7 @@ This is a demo version of the website, where users can override their user sessi
    | Variable              | Description                                                                                           |
    | --------------------- | ----------------------------------------------------------------------------------------------------- |
    | `PORT`                | The port where the backend server will run, e.g., `3000`.                                             |
-   | `MONGOUSER`           | MongoDB database username found in `Database Access` section of your project.                         |
-   | `MONGOPASS`           | MongoDB database password found in `Database Access` section of your project.                         |
+   | `MONGODB_URI`         | MongoDB connection URI found in `Database` > `Connect` > `Drivers` in your MongoDB Atlas project.     |
    | `DISCORD_TOKEN`       | Bot token found in `Bot` > `Token` in your Discord Developer Portal application.                      |
    | `DISCORD_GUILD_ID`    | The ID of your Discord server.                                                                        |
    | `YTAPI`               | Youtube API key found in `APIs & Services` > `Credentials` in Google Cloud Console.                   |
