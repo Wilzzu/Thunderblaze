@@ -39,7 +39,7 @@
 		"react-linkify": "^1.0.0-alpha",
 		"react-medium-image-zoom": "^5.2.11",
 		"react-parallax-tilt": "^1.7.261",
-		"react-redux": "^9.1.2",
+		"react-redux": "^9.2.0",
 		"react-remove-scroll": "^2.6.0",
 		"react-rewards": "^2.0.4",
 		"react-router-dom": "^7.0.1",
