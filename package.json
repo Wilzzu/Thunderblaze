@@ -27,7 +27,7 @@
 		"express-async-handler": "^1.2.0",
 		"express-session": "^1.18.1",
 		"framer-motion": "^11.12.0",
-		"hamburger-react": "^2.5.1",
+		"hamburger-react": "^2.5.2",
 		"moment": "^2.29.4",
 		"moment-duration-format": "^2.3.2",
 		"mongoose": "^8.9.0",
