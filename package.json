@@ -40,7 +40,7 @@
 		"react-medium-image-zoom": "^5.2.12",
 		"react-parallax-tilt": "^1.7.261",
 		"react-redux": "^9.2.0",
-		"react-remove-scroll": "^2.6.0",
+		"react-remove-scroll": "^2.6.2",
 		"react-rewards": "^2.0.4",
 		"react-router-dom": "^7.1.0",
 		"react-type-animation": "^3.1.0",
