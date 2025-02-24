@@ -47,7 +47,7 @@
 		"reactjs-popup": "^2.0.5",
 		"simplebar-react": "^3.3.0",
 		"tailwind-merge": "^2.6.0",
-		"tailwind-scrollbar": "^3.0.0"
+		"tailwind-scrollbar": "^4.0.1"
 	},
 	"devDependencies": {
 		"@types/react": "^19.0.8",
