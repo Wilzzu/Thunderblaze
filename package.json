@@ -28,7 +28,7 @@
 		"express-session": "^1.19.0",
 		"framer-motion": "^13.2.0",
 		"hamburger-react": "^2.5.2",
-		"moment": "^2.29.4",
+		"moment": "^2.31.0",
 		"moment-duration-format": "^2.3.2",
 		"mongoose": "^9.10.2",
 		"node-steam-openid": "^2.0.0",
